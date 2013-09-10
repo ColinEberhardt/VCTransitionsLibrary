@@ -1,8 +1,8 @@
 //
 //  ViewController.m
-//  TransitionsDemo
+//  ViewControllerTransitions
 //
-//  Created by Colin Eberhardt on 10/09/2013.
+//  Created by Colin Eberhardt on 08/09/2013.
 //  Copyright (c) 2013 Colin Eberhardt. All rights reserved.
 //
 
@@ -12,18 +12,27 @@
 
 @end
 
-@implementation ViewController
+static int colorIndex = 0;
+
+@implementation ViewController {
+    NSArray* _colors;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    
+    _colors = @[[UIColor redColor],
+                [UIColor orangeColor],
+                [UIColor yellowColor],
+                [UIColor greenColor],
+                [UIColor blueColor],
+                [UIColor purpleColor]];
+	
+    self.view.backgroundColor = _colors[colorIndex];
+    
+    colorIndex  = (colorIndex + 1) % _colors.count;
 }
 
 @end

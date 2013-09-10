@@ -14,12 +14,17 @@
 		7273232C17DFBD4D0072C7FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7273232B17DFBD4D0072C7FD /* main.m */; };
 		7273233017DFBD4D0072C7FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7273232F17DFBD4D0072C7FD /* AppDelegate.m */; };
 		7273233317DFBD4D0072C7FD /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7273233117DFBD4D0072C7FD /* Main_iPhone.storyboard */; };
-		7273233617DFBD4D0072C7FD /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7273233417DFBD4D0072C7FD /* Main_iPad.storyboard */; };
 		7273233917DFBD4D0072C7FD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7273233817DFBD4D0072C7FD /* ViewController.m */; };
 		7273233B17DFBD4D0072C7FD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7273233A17DFBD4D0072C7FD /* Images.xcassets */; };
 		7273234217DFBD4D0072C7FD /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7273234117DFBD4D0072C7FD /* XCTest.framework */; };
 		7273234317DFBD4D0072C7FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7273231F17DFBD4D0072C7FD /* Foundation.framework */; };
 		7273234417DFBD4D0072C7FD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7273232317DFBD4D0072C7FD /* UIKit.framework */; };
+		7273235F17DFBEBF0072C7FD /* CEFlipAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7273235B17DFBEBF0072C7FD /* CEFlipAnimationController.m */; };
+		7273236017DFBEBF0072C7FD /* CETurnAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7273235D17DFBEBF0072C7FD /* CETurnAnimationController.m */; };
+		7273236317DFBEFE0072C7FD /* CEReversibleAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7273236217DFBEFE0072C7FD /* CEReversibleAnimationController.m */; };
+		7273236917DFBF140072C7FD /* CEBaseInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7273236617DFBF140072C7FD /* CEBaseInteractionController.m */; };
+		7273236A17DFBF140072C7FD /* CESwipeInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7273236817DFBF140072C7FD /* CESwipeInteractionController.m */; };
+		7273236D17DFC0690072C7FD /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7273236C17DFC0690072C7FD /* NavigationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,12 +49,23 @@
 		7273232E17DFBD4D0072C7FD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7273232F17DFBD4D0072C7FD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7273233217DFBD4D0072C7FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		7273233517DFBD4D0072C7FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		7273233717DFBD4D0072C7FD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		7273233817DFBD4D0072C7FD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		7273233A17DFBD4D0072C7FD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7273234017DFBD4D0072C7FD /* TransitionsDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransitionsDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7273234117DFBD4D0072C7FD /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		7273235A17DFBEBF0072C7FD /* CEFlipAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEFlipAnimationController.h; sourceTree = "<group>"; };
+		7273235B17DFBEBF0072C7FD /* CEFlipAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEFlipAnimationController.m; sourceTree = "<group>"; };
+		7273235C17DFBEBF0072C7FD /* CETurnAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CETurnAnimationController.h; sourceTree = "<group>"; };
+		7273235D17DFBEBF0072C7FD /* CETurnAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CETurnAnimationController.m; sourceTree = "<group>"; };
+		7273236117DFBEFE0072C7FD /* CEReversibleAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEReversibleAnimationController.h; sourceTree = "<group>"; };
+		7273236217DFBEFE0072C7FD /* CEReversibleAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEReversibleAnimationController.m; sourceTree = "<group>"; };
+		7273236517DFBF140072C7FD /* CEBaseInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEBaseInteractionController.h; sourceTree = "<group>"; };
+		7273236617DFBF140072C7FD /* CEBaseInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEBaseInteractionController.m; sourceTree = "<group>"; };
+		7273236717DFBF140072C7FD /* CESwipeInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CESwipeInteractionController.h; sourceTree = "<group>"; };
+		7273236817DFBF140072C7FD /* CESwipeInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CESwipeInteractionController.m; sourceTree = "<group>"; };
+		7273236B17DFC0690072C7FD /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
+		7273236C17DFC0690072C7FD /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +95,8 @@
 		7273231317DFBD4D0072C7FD = {
 			isa = PBXGroup;
 			children = (
+				7273236417DFBF140072C7FD /* InteractionControllers */,
+				7273235717DFBEBF0072C7FD /* AnimationControllers */,
 				7273232517DFBD4D0072C7FD /* TransitionsDemo */,
 				7273231E17DFBD4D0072C7FD /* Frameworks */,
 				7273231D17DFBD4D0072C7FD /* Products */,
@@ -111,11 +129,12 @@
 				7273232E17DFBD4D0072C7FD /* AppDelegate.h */,
 				7273232F17DFBD4D0072C7FD /* AppDelegate.m */,
 				7273233117DFBD4D0072C7FD /* Main_iPhone.storyboard */,
-				7273233417DFBD4D0072C7FD /* Main_iPad.storyboard */,
 				7273233717DFBD4D0072C7FD /* ViewController.h */,
 				7273233817DFBD4D0072C7FD /* ViewController.m */,
 				7273233A17DFBD4D0072C7FD /* Images.xcassets */,
 				7273232617DFBD4D0072C7FD /* Supporting Files */,
+				7273236B17DFC0690072C7FD /* NavigationController.h */,
+				7273236C17DFC0690072C7FD /* NavigationController.m */,
 			);
 			path = TransitionsDemo;
 			sourceTree = "<group>";
@@ -129,6 +148,32 @@
 				7273232D17DFBD4D0072C7FD /* TransitionsDemo-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7273235717DFBEBF0072C7FD /* AnimationControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7273236117DFBEFE0072C7FD /* CEReversibleAnimationController.h */,
+				7273236217DFBEFE0072C7FD /* CEReversibleAnimationController.m */,
+				7273235A17DFBEBF0072C7FD /* CEFlipAnimationController.h */,
+				7273235B17DFBEBF0072C7FD /* CEFlipAnimationController.m */,
+				7273235C17DFBEBF0072C7FD /* CETurnAnimationController.h */,
+				7273235D17DFBEBF0072C7FD /* CETurnAnimationController.m */,
+			);
+			name = AnimationControllers;
+			path = ../AnimationControllers;
+			sourceTree = "<group>";
+		};
+		7273236417DFBF140072C7FD /* InteractionControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7273236517DFBF140072C7FD /* CEBaseInteractionController.h */,
+				7273236617DFBF140072C7FD /* CEBaseInteractionController.m */,
+				7273236717DFBF140072C7FD /* CESwipeInteractionController.h */,
+				7273236817DFBF140072C7FD /* CESwipeInteractionController.m */,
+			);
+			name = InteractionControllers;
+			path = ../InteractionControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,7 +252,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7273233617DFBD4D0072C7FD /* Main_iPad.storyboard in Resources */,
 				7273233B17DFBD4D0072C7FD /* Images.xcassets in Resources */,
 				7273233317DFBD4D0072C7FD /* Main_iPhone.storyboard in Resources */,
 				7273232A17DFBD4D0072C7FD /* InfoPlist.strings in Resources */,
@@ -228,9 +272,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7273236917DFBF140072C7FD /* CEBaseInteractionController.m in Sources */,
 				7273233917DFBD4D0072C7FD /* ViewController.m in Sources */,
 				7273233017DFBD4D0072C7FD /* AppDelegate.m in Sources */,
 				7273232C17DFBD4D0072C7FD /* main.m in Sources */,
+				7273236017DFBEBF0072C7FD /* CETurnAnimationController.m in Sources */,
+				7273236A17DFBF140072C7FD /* CESwipeInteractionController.m in Sources */,
+				7273236D17DFC0690072C7FD /* NavigationController.m in Sources */,
+				7273235F17DFBEBF0072C7FD /* CEFlipAnimationController.m in Sources */,
+				7273236317DFBEFE0072C7FD /* CEReversibleAnimationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,14 +316,6 @@
 				7273233217DFBD4D0072C7FD /* Base */,
 			);
 			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		7273233417DFBD4D0072C7FD /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7273233517DFBD4D0072C7FD /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
