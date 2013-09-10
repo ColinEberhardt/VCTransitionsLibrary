@@ -20,8 +20,6 @@
 		7273234217DFBD4D0072C7FD /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7273234117DFBD4D0072C7FD /* XCTest.framework */; };
 		7273234317DFBD4D0072C7FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7273231F17DFBD4D0072C7FD /* Foundation.framework */; };
 		7273234417DFBD4D0072C7FD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7273232317DFBD4D0072C7FD /* UIKit.framework */; };
-		7273234C17DFBD4D0072C7FD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7273234A17DFBD4D0072C7FD /* InfoPlist.strings */; };
-		7273234E17DFBD4D0072C7FD /* TransitionsDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7273234D17DFBD4D0072C7FD /* TransitionsDemoTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,9 +50,6 @@
 		7273233A17DFBD4D0072C7FD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7273234017DFBD4D0072C7FD /* TransitionsDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransitionsDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7273234117DFBD4D0072C7FD /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		7273234917DFBD4D0072C7FD /* TransitionsDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TransitionsDemoTests-Info.plist"; sourceTree = "<group>"; };
-		7273234B17DFBD4D0072C7FD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		7273234D17DFBD4D0072C7FD /* TransitionsDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransitionsDemoTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +80,6 @@
 			isa = PBXGroup;
 			children = (
 				7273232517DFBD4D0072C7FD /* TransitionsDemo */,
-				7273234717DFBD4D0072C7FD /* TransitionsDemoTests */,
 				7273231E17DFBD4D0072C7FD /* Frameworks */,
 				7273231D17DFBD4D0072C7FD /* Products */,
 			);
@@ -133,24 +127,6 @@
 				7273232817DFBD4D0072C7FD /* InfoPlist.strings */,
 				7273232B17DFBD4D0072C7FD /* main.m */,
 				7273232D17DFBD4D0072C7FD /* TransitionsDemo-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		7273234717DFBD4D0072C7FD /* TransitionsDemoTests */ = {
-			isa = PBXGroup;
-			children = (
-				7273234D17DFBD4D0072C7FD /* TransitionsDemoTests.m */,
-				7273234817DFBD4D0072C7FD /* Supporting Files */,
-			);
-			path = TransitionsDemoTests;
-			sourceTree = "<group>";
-		};
-		7273234817DFBD4D0072C7FD /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				7273234917DFBD4D0072C7FD /* TransitionsDemoTests-Info.plist */,
-				7273234A17DFBD4D0072C7FD /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -242,7 +218,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7273234C17DFBD4D0072C7FD /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +238,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7273234E17DFBD4D0072C7FD /* TransitionsDemoTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,14 +274,6 @@
 				7273233517DFBD4D0072C7FD /* Base */,
 			);
 			name = Main_iPad.storyboard;
-			sourceTree = "<group>";
-		};
-		7273234A17DFBD4D0072C7FD /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7273234B17DFBD4D0072C7FD /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
