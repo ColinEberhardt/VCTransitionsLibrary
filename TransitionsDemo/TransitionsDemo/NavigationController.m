@@ -19,19 +19,14 @@
 @implementation NavigationController {
     CEBaseInteractionController* _swipeController;
 }
+
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
         
-        AppDelegate * appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-        appDelegate.navigationController = self;
-        
-        // Custom initialization
         self.delegate = self;
         
         _swipeController = [CESwipeInteractionController new];
         
-        self.animationController = [CEFlipAnimationController new];
-        self.animationController.duration = 1.0f;
     }
     return self;
 }
@@ -43,16 +38,14 @@
         [_swipeController wireToViewController:toVC];
     }
     
-    if (self.animationController) {
-        self.animationController.reverse = operation == UINavigationControllerOperationPop;
+    if (AppDelegateAccessor.navigationControllerAnimationController) {
+        AppDelegateAccessor.navigationControllerAnimationController.reverse = operation == UINavigationControllerOperationPop;
     }
     
-    return self.animationController;
+    return AppDelegateAccessor.navigationControllerAnimationController;
 }
 
-- (id <UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController
-                          interactionControllerForAnimationController:(id <UIViewControllerAnimatedTransitioning>) animationController {
-    
+- (id <UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController interactionControllerForAnimationController:(id <UIViewControllerAnimatedTransitioning>) animationController {
     
     return _swipeController.interactionInProgress ? _swipeController : nil;
 }

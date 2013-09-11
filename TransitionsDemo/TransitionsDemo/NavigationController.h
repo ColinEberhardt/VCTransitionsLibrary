@@ -7,10 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CEReversibleAnimationController.h"
 
 @interface NavigationController : UINavigationController
 
-@property (nonatomic, strong) CEReversibleAnimationController *animationController;
 
 @end

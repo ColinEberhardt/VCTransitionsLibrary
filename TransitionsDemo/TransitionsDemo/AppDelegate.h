@@ -7,12 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NavigationController.h"
+
+// a macro for easy access to the singleton app-delegate. Yes, I know some people
+// consider the an anti-pattern, but this is just a simple test app, so let's
+// not stress about it? ;-)
+#define AppDelegateAccessor ((AppDelegate *)[[UIApplication sharedApplication] delegate])
+
+@class CEReversibleAnimationController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (assign, nonatomic) NavigationController *navigationController;
-
+@property (strong, nonatomic) CEReversibleAnimationController *settingsAnimationController;
+@property (strong, nonatomic) CEReversibleAnimationController *navigationControllerAnimationController;
 @end

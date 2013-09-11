@@ -48,7 +48,7 @@
                     <navigationItem key="navigationItem" title="MyView" id="Dnh-wc-MG1">
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="uCX-xc-klL">
                             <connections>
-                                <segue destination="4TF-hz-OQ8" kind="modal" id="ixC-z2-ySi"/>
+                                <segue destination="4TF-hz-OQ8" kind="modal" identifier="ShowSettings" id="ixC-z2-ySi"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

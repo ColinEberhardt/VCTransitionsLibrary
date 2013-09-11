@@ -7,8 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "AppDelegate.h"
 
-@interface ViewController ()
+@interface ViewController () <UIViewControllerTransitioningDelegate>
 
 @end
 
@@ -34,5 +35,32 @@ static int colorIndex = 0;
     
     colorIndex  = (colorIndex + 1) % _colors.count;
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"ShowSettings"]) {
+        UIViewController *toVC = segue.destinationViewController;
+        toVC.transitioningDelegate = self;
+    }
+    
+    [super prepareForSegue:segue sender:sender];
+}
+
+#pragma mark - UIViewControllerTransitioningDelegate
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
+    AppDelegateAccessor.settingsAnimationController.reverse = NO;
+    return AppDelegateAccessor.settingsAnimationController;
+}
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
+    AppDelegateAccessor.settingsAnimationController.reverse = YES;
+    return AppDelegateAccessor.settingsAnimationController;
+ }
+/*
+ - (id<UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id<UIViewControllerAnimatedTransitioning>)animator {
+ return _pinchInteractionController.interactionInProgress ? _pinchInteractionController : nil;
+ }
+ */
 
 @end

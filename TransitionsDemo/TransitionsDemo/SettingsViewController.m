@@ -8,30 +8,27 @@
 
 #import "SettingsViewController.h"
 #import "NavigationController.h"
+#import "CEBaseInteractionController.h"
 #import "AppDelegate.h"
+#import "CEReversibleAnimationController.h"
 
-@interface SettingsViewController ()
+@interface SettingsViewController () <UIViewControllerTransitioningDelegate>
 
 @end
 
 @implementation SettingsViewController {
-    NSArray *_navigationControllerTransitions;
+    NSArray *_animationControllers;
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
-        _navigationControllerTransitions = @[@"None", @"Flip", @"Turn"];    }
+        _animationControllers = @[@"None", @"Flip", @"Turn"];
+    }
     return self;
 }
 
 - (IBAction)doneButtonPressed:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (NSString *)getRootNavigationControllerTransition {
-    AppDelegate * appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    NavigationController *navigationController = appDelegate.navigationController;
-    return [self classToTransitionName:navigationController.animationController];
 }
 
 - (NSString *)classToTransitionName:(NSObject *)instance {
@@ -58,37 +55,60 @@
     return [[NSClassFromString(className) alloc] init];
 }
 
+#pragma mark - UITableViewDelegate methods
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString* transitionName = _navigationControllerTransitions[indexPath.row];
+    NSString* transitionName = _animationControllers[indexPath.row];
+   
+    // update the animation controller used by the navigation controller
+    if (indexPath.section == 0) {
+        AppDelegateAccessor.navigationControllerAnimationController = [self transitionNameToInstance:transitionName];
+    }
     
-    AppDelegate * appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    NavigationController *navigationController = appDelegate.navigationController;
-    
-    navigationController.animationController = [self transitionNameToInstance:transitionName];
+    // update the animation controller used by the settings view controller
+    if (indexPath.section == 1) {
+        AppDelegateAccessor.settingsAnimationController = [self transitionNameToInstance:transitionName];
+    }
     
     [self.tableView reloadData];
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+
+    // get the cell text
     NSString *transitionName = cell.textLabel.text;
     
-    NSString *navigationControllerTransition = [self getRootNavigationControllerTransition];
-    cell.accessoryType = [transitionName isEqualToString:navigationControllerTransition] ?   UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+    // get the current transition for the navigation controller or settings
+    CEReversibleAnimationController *currentTransition = indexPath.section == 0 ?
+        AppDelegateAccessor.navigationControllerAnimationController :
+        AppDelegateAccessor.settingsAnimationController;
+    
+    // if they match - render a tick
+    NSString *transitionClassName = [self classToTransitionName:currentTransition];
+    cell.accessoryType = [transitionName isEqualToString:transitionClassName] ?   UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
 }
+
+#pragma mark - UITableViewDatasource methods
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    cell.textLabel.text = _navigationControllerTransitions[indexPath.row];
+    cell.textLabel.text = _animationControllers[indexPath.row];
     return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _navigationControllerTransitions.count;
+    return _animationControllers.count;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 2;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (section == 0)
+        return @"Navigation push / pop animation controller";
+
+    return @"Settings present / dismiss aniation controller";
 }
 
 @end

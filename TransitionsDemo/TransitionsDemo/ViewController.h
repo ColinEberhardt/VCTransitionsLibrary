@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CEReversibleAnimationController.h"
 
 @interface ViewController : UIViewController
+
+@property (nonatomic, strong) CEReversibleAnimationController *settingsAnimationController;
 
 @end
