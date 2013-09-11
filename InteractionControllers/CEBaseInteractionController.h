@@ -8,17 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, CEInteractionOperation) {
+    CEInteractionOperationPop,
+    CEInteractionOperationDismiss
+};
+
 /**
  A base class for interaction controllers that can be used with navigation controllers to perform pop operations, or with view controllers that have been presented modally to perform dismissal.
-
  */
 @interface CEBaseInteractionController : UIPercentDrivenInteractiveTransition
 
 /**
  Connects this interaction controller to the given view controller.
  @param viewController An accumulator function to be invoked on each element.
+ @param operation The operation that this interaction initiates when.
 */
-- (void)wireToViewController:(UIViewController*)viewController;
+- (void)wireToViewController:(UIViewController*)viewController forOperation:(CEInteractionOperation)operation;
 
 /**
  This property indicates whether an interactive transition is in progress.

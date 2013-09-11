@@ -10,18 +10,25 @@
 
 @implementation CESwipeInteractionController {
     BOOL _shouldCompleteTransition;
-    UINavigationController *_navigationController;
+    UIViewController *_viewController;
+    UIPanGestureRecognizer *_gesture;
+    CEInteractionOperation _operation;
 }
 
-- (void)wireToViewController:(UIViewController *)viewController {
-    _navigationController = viewController.navigationController;
+-(void)dealloc {
+    [_gesture.view removeGestureRecognizer:_gesture];
+}
+
+- (void)wireToViewController:(UIViewController *)viewController forOperation:(CEInteractionOperation)operation{
+    _operation = operation;
+    _viewController = viewController;
     [self prepareGestureRecognizerInView:viewController.view];
 }
 
 
 - (void)prepareGestureRecognizerInView:(UIView*)view {
-    UIPanGestureRecognizer *gesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
-    [view addGestureRecognizer:gesture];    
+    _gesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
+    [view addGestureRecognizer:_gesture];
 }
 
 - (CGFloat)completionSpeed
@@ -34,23 +41,27 @@
     
     switch (gestureRecognizer.state) {
         case UIGestureRecognizerStateBegan:
-            // 1. Start an interactive transition!
+            // start an interactive transition!
             self.interactionInProgress = YES;
-            [_navigationController popViewControllerAnimated:YES];
+            
+            // perform the required operation
+            if (_operation == CEInteractionOperationPop) {
+                [_viewController.navigationController popViewControllerAnimated:YES];
+            } else {
+                [_viewController dismissViewControllerAnimated:YES completion:nil];
+            }
             break;
         case UIGestureRecognizerStateChanged: {
-            // 2. compute the current position
+            // compute the current position
             CGFloat fraction = -(translation.x / 200.0);
             fraction = fminf(fmaxf(fraction, 0.0), 1.0);
-            // 3. should we complete?
             _shouldCompleteTransition = (fraction > 0.5);
-            // 4. update the animation controller
+            
             [self updateInteractiveTransition:fraction];
             break;
         }
         case UIGestureRecognizerStateEnded:
         case UIGestureRecognizerStateCancelled:
-            // 5. finish or cancel
             self.interactionInProgress = NO;
             if (!_shouldCompleteTransition || gestureRecognizer.state == UIGestureRecognizerStateCancelled) {
                 [self cancelInteractiveTransition];

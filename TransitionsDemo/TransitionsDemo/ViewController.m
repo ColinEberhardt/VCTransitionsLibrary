@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "AppDelegate.h"
+#import "CEBaseInteractionController.h"
 
 @interface ViewController () <UIViewControllerTransitioningDelegate>
 
@@ -49,6 +50,11 @@ static int colorIndex = 0;
 #pragma mark - UIViewControllerTransitioningDelegate
 
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
+    
+    if (AppDelegateAccessor.settingsInteractionController) {
+        [AppDelegateAccessor.settingsInteractionController wireToViewController:presented forOperation:CEInteractionOperationDismiss];
+    }
+    
     AppDelegateAccessor.settingsAnimationController.reverse = NO;
     return AppDelegateAccessor.settingsAnimationController;
 }
@@ -57,10 +63,10 @@ static int colorIndex = 0;
     AppDelegateAccessor.settingsAnimationController.reverse = YES;
     return AppDelegateAccessor.settingsAnimationController;
  }
-/*
+
  - (id<UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id<UIViewControllerAnimatedTransitioning>)animator {
- return _pinchInteractionController.interactionInProgress ? _pinchInteractionController : nil;
+     return AppDelegateAccessor.settingsInteractionController && AppDelegateAccessor.settingsInteractionController.interactionInProgress ? AppDelegateAccessor.settingsInteractionController : nil;
  }
- */
+
 
 @end

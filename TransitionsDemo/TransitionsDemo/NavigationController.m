@@ -8,34 +8,27 @@
 
 #import "NavigationController.h"
 #import "AppDelegate.h"
-#import "CEFlipAnimationController.h"
-#import "CESwipeInteractionController.h"
 #import "CEBaseInteractionController.h"
+#import "CEReversibleAnimationController.h"
 
 @interface NavigationController () <UINavigationControllerDelegate>
 
 @end
 
-@implementation NavigationController {
-    CEBaseInteractionController* _swipeController;
-}
+@implementation NavigationController
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
-        
         self.delegate = self;
-        
-        _swipeController = [CESwipeInteractionController new];
-        
     }
     return self;
 }
 
-
 - (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC {
     
-    if (operation == UINavigationControllerOperationPush) {
-        [_swipeController wireToViewController:toVC];
+    // when a push occurs, wire the interaction controller to the to- view controller
+    if (operation == UINavigationControllerOperationPush && AppDelegateAccessor.navigationControllerInteractionController) {
+        [AppDelegateAccessor.navigationControllerInteractionController wireToViewController:toVC forOperation:CEInteractionOperationPop];
     }
     
     if (AppDelegateAccessor.navigationControllerAnimationController) {
@@ -47,7 +40,8 @@
 
 - (id <UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController interactionControllerForAnimationController:(id <UIViewControllerAnimatedTransitioning>) animationController {
     
-    return _swipeController.interactionInProgress ? _swipeController : nil;
+    // if we have an interaction controller - and it is currently in progress, return it
+    return AppDelegateAccessor.navigationControllerInteractionController && AppDelegateAccessor.navigationControllerInteractionController.interactionInProgress ? AppDelegateAccessor.navigationControllerInteractionController : nil;
 }
 
 @end

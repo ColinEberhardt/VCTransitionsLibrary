@@ -13,7 +13,7 @@
 // not stress about it? ;-)
 #define AppDelegateAccessor ((AppDelegate *)[[UIApplication sharedApplication] delegate])
 
-@class CEReversibleAnimationController;
+@class CEReversibleAnimationController, CEBaseInteractionController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -21,4 +21,7 @@
 
 @property (strong, nonatomic) CEReversibleAnimationController *settingsAnimationController;
 @property (strong, nonatomic) CEReversibleAnimationController *navigationControllerAnimationController;
+@property (strong, nonatomic) CEBaseInteractionController *navigationControllerInteractionController;
+@property (strong, nonatomic) CEBaseInteractionController *settingsInteractionController;
+
 @end

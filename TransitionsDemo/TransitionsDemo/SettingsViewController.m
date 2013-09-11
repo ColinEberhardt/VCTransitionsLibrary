@@ -18,11 +18,13 @@
 
 @implementation SettingsViewController {
     NSArray *_animationControllers;
+    NSArray *_interactionControllers;
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
         _animationControllers = @[@"None", @"Flip", @"Turn"];
+        _interactionControllers = @[@"None", @"Swipe"];
     }
     return self;
 }
@@ -58,18 +60,29 @@
 #pragma mark - UITableViewDelegate methods
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString* transitionName = _animationControllers[indexPath.row];
-   
-    // update the animation controller used by the navigation controller
-    if (indexPath.section == 0) {
-        AppDelegateAccessor.navigationControllerAnimationController = [self transitionNameToInstance:transitionName];
+    if (indexPath.section < 2) {
+        NSString* transitionName = _animationControllers[indexPath.row];
+        NSString *className = [NSString stringWithFormat:@"CE%@AnimationController", transitionName];
+        id transitionInstance = [[NSClassFromString(className) alloc] init];
+       
+        if (indexPath.section == 0) {
+            AppDelegateAccessor.navigationControllerAnimationController = transitionInstance;
+        }
+        if (indexPath.section == 1) {
+            AppDelegateAccessor.settingsAnimationController = transitionInstance;
+        }
+    } else {
+        NSString* transitionName = _interactionControllers[indexPath.row];
+        NSString *className = [NSString stringWithFormat:@"CE%@InteractionController", transitionName];
+        id transitionInstance = [[NSClassFromString(className) alloc] init];
+        
+        if (indexPath.section == 2) {
+            AppDelegateAccessor.navigationControllerInteractionController = transitionInstance;
+        }
+        if (indexPath.section == 3) {
+            AppDelegateAccessor.settingsInteractionController = transitionInstance;
+        }
     }
-    
-    // update the animation controller used by the settings view controller
-    if (indexPath.section == 1) {
-        AppDelegateAccessor.settingsAnimationController = [self transitionNameToInstance:transitionName];
-    }
-    
     [self.tableView reloadData];
 }
 
@@ -77,38 +90,60 @@
 
     // get the cell text
     NSString *transitionName = cell.textLabel.text;
+    NSObject *currentTransition;
     
-    // get the current transition for the navigation controller or settings
-    CEReversibleAnimationController *currentTransition = indexPath.section == 0 ?
-        AppDelegateAccessor.navigationControllerAnimationController :
-        AppDelegateAccessor.settingsAnimationController;
+    // get the current animation / interaction controller
+    if (indexPath.section < 2) {
+        currentTransition = indexPath.section == 0 ?
+            AppDelegateAccessor.navigationControllerAnimationController :
+            AppDelegateAccessor.settingsAnimationController;
+    } else {
+        currentTransition = indexPath.section == 2 ?
+            AppDelegateAccessor.navigationControllerInteractionController :
+            AppDelegateAccessor.settingsInteractionController;
+    }
     
     // if they match - render a tick
     NSString *transitionClassName = [self classToTransitionName:currentTransition];
     cell.accessoryType = [transitionName isEqualToString:transitionClassName] ?   UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+   
 }
 
 #pragma mark - UITableViewDatasource methods
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    cell.textLabel.text = _animationControllers[indexPath.row];
+    
+    if (indexPath.section < 2) {
+        cell.textLabel.text = _animationControllers[indexPath.row];
+    } else {
+        cell.textLabel.text = _interactionControllers[indexPath.row];
+    }
     return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _animationControllers.count;
+    return section < 2 ? _animationControllers.count : _interactionControllers.count;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 4;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if (section == 0)
         return @"Navigation push / pop animation controller";
 
-    return @"Settings present / dismiss aniation controller";
+    if (section == 1)
+        return @"Settings present / dismiss animation controller";
+    
+    if (section == 2)
+        return @"Navigation push / pop interaction controller";
+    
+    if (section == 3)
+        return @"Settings present / dismiss interaction controller";
+
+    return @"";
 }
 
 @end

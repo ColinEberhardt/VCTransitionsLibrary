@@ -11,5 +11,4 @@
 
 @interface CESwipeInteractionController : CEBaseInteractionController
 
-
 @end
