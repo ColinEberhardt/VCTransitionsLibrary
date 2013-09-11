@@ -7,7 +7,7 @@
 //
 
 #import "NavigationController.h"
-#import "CEReversibleAnimationController.h"
+#import "AppDelegate.h"
 #import "CEFlipAnimationController.h"
 #import "CESwipeInteractionController.h"
 #import "CEBaseInteractionController.h"
@@ -17,33 +17,25 @@
 @end
 
 @implementation NavigationController {
-    CEReversibleAnimationController* _animationController;
     CEBaseInteractionController* _swipeController;
 }
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
+        
+        AppDelegate * appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        appDelegate.navigationController = self;
+        
         // Custom initialization
         self.delegate = self;
         
         _swipeController = [CESwipeInteractionController new];
         
-        _animationController = [CEFlipAnimationController new];
-        _animationController.duration = 1.0f;
+        self.animationController = [CEFlipAnimationController new];
+        self.animationController.duration = 1.0f;
     }
     return self;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 - (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC {
     
@@ -51,9 +43,11 @@
         [_swipeController wireToViewController:toVC];
     }
     
-    _animationController.reverse = operation == UINavigationControllerOperationPop;
+    if (self.animationController) {
+        self.animationController.reverse = operation == UINavigationControllerOperationPop;
+    }
     
-    return _animationController;
+    return self.animationController;
 }
 
 - (id <UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController

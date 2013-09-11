@@ -10,8 +10,15 @@
 
 @implementation CEReversibleAnimationController
 
+- (id)init {
+    if (self = [super init]) {
+        self.duration = 0.5f;
+    }
+    return self;
+}
+
 - (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext {
-    return 0.0;
+    return self.duration;
 }
 
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext {

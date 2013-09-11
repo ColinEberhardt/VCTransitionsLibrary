@@ -164,9 +164,4 @@
     return  CATransform3DMakeRotation(angle, 0.0, 1.0, 0.0);
 }
 
-- (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext {
-    return self.duration;
-}
-
-
 @end

@@ -25,6 +25,7 @@
 		7273236917DFBF140072C7FD /* CEBaseInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7273236617DFBF140072C7FD /* CEBaseInteractionController.m */; };
 		7273236A17DFBF140072C7FD /* CESwipeInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7273236817DFBF140072C7FD /* CESwipeInteractionController.m */; };
 		7273236D17DFC0690072C7FD /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7273236C17DFC0690072C7FD /* NavigationController.m */; };
+		7273237017DFC4710072C7FD /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7273236F17DFC4710072C7FD /* SettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,8 @@
 		7273236817DFBF140072C7FD /* CESwipeInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CESwipeInteractionController.m; sourceTree = "<group>"; };
 		7273236B17DFC0690072C7FD /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
 		7273236C17DFC0690072C7FD /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
+		7273236E17DFC4710072C7FD /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		7273236F17DFC4710072C7FD /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +138,8 @@
 				7273232617DFBD4D0072C7FD /* Supporting Files */,
 				7273236B17DFC0690072C7FD /* NavigationController.h */,
 				7273236C17DFC0690072C7FD /* NavigationController.m */,
+				7273236E17DFC4710072C7FD /* SettingsViewController.h */,
+				7273236F17DFC4710072C7FD /* SettingsViewController.m */,
 			);
 			path = TransitionsDemo;
 			sourceTree = "<group>";
@@ -279,6 +284,7 @@
 				7273236017DFBEBF0072C7FD /* CETurnAnimationController.m in Sources */,
 				7273236A17DFBF140072C7FD /* CESwipeInteractionController.m in Sources */,
 				7273236D17DFC0690072C7FD /* NavigationController.m in Sources */,
+				7273237017DFC4710072C7FD /* SettingsViewController.m in Sources */,
 				7273235F17DFBEBF0072C7FD /* CEFlipAnimationController.m in Sources */,
 				7273236317DFBEFE0072C7FD /* CEReversibleAnimationController.m in Sources */,
 			);
