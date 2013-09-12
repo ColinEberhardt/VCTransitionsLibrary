@@ -26,6 +26,8 @@
 		7273236A17DFBF140072C7FD /* CESwipeInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7273236817DFBF140072C7FD /* CESwipeInteractionController.m */; };
 		7273236D17DFC0690072C7FD /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7273236C17DFC0690072C7FD /* NavigationController.m */; };
 		7273237017DFC4710072C7FD /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7273236F17DFC4710072C7FD /* SettingsViewController.m */; };
+		72C15E1117E10C620056B3F9 /* CECrossfadeAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C15E1017E10C620056B3F9 /* CECrossfadeAnimationController.m */; };
+		72C15E1417E10E7B0056B3F9 /* CEExplodeAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C15E1317E10E7B0056B3F9 /* CEExplodeAnimationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,10 @@
 		7273236C17DFC0690072C7FD /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
 		7273236E17DFC4710072C7FD /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		7273236F17DFC4710072C7FD /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		72C15E0F17E10C620056B3F9 /* CECrossfadeAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CECrossfadeAnimationController.h; sourceTree = "<group>"; };
+		72C15E1017E10C620056B3F9 /* CECrossfadeAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CECrossfadeAnimationController.m; sourceTree = "<group>"; };
+		72C15E1217E10E7B0056B3F9 /* CEExplodeAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEExplodeAnimationController.h; sourceTree = "<group>"; };
+		72C15E1317E10E7B0056B3F9 /* CEExplodeAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEExplodeAnimationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +170,10 @@
 				7273235B17DFBEBF0072C7FD /* CEFlipAnimationController.m */,
 				7273235C17DFBEBF0072C7FD /* CETurnAnimationController.h */,
 				7273235D17DFBEBF0072C7FD /* CETurnAnimationController.m */,
+				72C15E0F17E10C620056B3F9 /* CECrossfadeAnimationController.h */,
+				72C15E1017E10C620056B3F9 /* CECrossfadeAnimationController.m */,
+				72C15E1217E10E7B0056B3F9 /* CEExplodeAnimationController.h */,
+				72C15E1317E10E7B0056B3F9 /* CEExplodeAnimationController.m */,
 			);
 			name = AnimationControllers;
 			path = ../AnimationControllers;
@@ -279,6 +289,8 @@
 			files = (
 				7273236917DFBF140072C7FD /* CEBaseInteractionController.m in Sources */,
 				7273233917DFBD4D0072C7FD /* ViewController.m in Sources */,
+				72C15E1417E10E7B0056B3F9 /* CEExplodeAnimationController.m in Sources */,
+				72C15E1117E10C620056B3F9 /* CECrossfadeAnimationController.m in Sources */,
 				7273233017DFBD4D0072C7FD /* AppDelegate.m in Sources */,
 				7273232C17DFBD4D0072C7FD /* main.m in Sources */,
 				7273236017DFBEBF0072C7FD /* CETurnAnimationController.m in Sources */,
@@ -482,6 +494,7 @@
 				7273235317DFBD4D0072C7FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7273235417DFBD4D0072C7FD /* Build configuration list for PBXNativeTarget "TransitionsDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +503,7 @@
 				7273235617DFBD4D0072C7FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
