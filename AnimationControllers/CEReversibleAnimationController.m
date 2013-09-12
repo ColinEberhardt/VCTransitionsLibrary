@@ -12,7 +12,7 @@
 
 - (id)init {
     if (self = [super init]) {
-        self.duration = 0.5f;
+        self.duration = 5.5f;
     }
     return self;
 }

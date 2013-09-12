@@ -7,11 +7,13 @@
 //
 
 #import "AppDelegate.h"
+#import "CEAccordionAnimationController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    AppDelegateAccessor.navigationControllerAnimationController = [CEAccordionAnimationController new];
     return YES;
 }
 
