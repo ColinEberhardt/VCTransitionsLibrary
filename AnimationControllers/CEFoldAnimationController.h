@@ -8,6 +8,8 @@
 
 #import "CEReversibleAnimationController.h"
 
-@interface CEAccordionAnimationController : CEReversibleAnimationController
+@interface CEFoldAnimationController : CEReversibleAnimationController
+
+@property (nonatomic) NSUInteger folds;
 
 @end
