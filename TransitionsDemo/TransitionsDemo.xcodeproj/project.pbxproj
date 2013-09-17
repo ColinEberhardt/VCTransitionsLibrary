@@ -29,6 +29,7 @@
 		72C15E1117E10C620056B3F9 /* CECrossfadeAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C15E1017E10C620056B3F9 /* CECrossfadeAnimationController.m */; };
 		72C15E1417E10E7B0056B3F9 /* CEExplodeAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C15E1317E10E7B0056B3F9 /* CEExplodeAnimationController.m */; };
 		72C15E1717E19A940056B3F9 /* CEFoldAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C15E1617E19A940056B3F9 /* CEFoldAnimationController.m */; };
+		72EC05A917E7B1BE00DCB9A3 /* CEPinchInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72EC05A817E7B1BE00DCB9A3 /* CEPinchInteractionController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,8 @@
 		72C15E1317E10E7B0056B3F9 /* CEExplodeAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEExplodeAnimationController.m; sourceTree = "<group>"; };
 		72C15E1517E19A940056B3F9 /* CEFoldAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEFoldAnimationController.h; sourceTree = "<group>"; };
 		72C15E1617E19A940056B3F9 /* CEFoldAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEFoldAnimationController.m; sourceTree = "<group>"; };
+		72EC05A717E7B1BE00DCB9A3 /* CEPinchInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEPinchInteractionController.h; sourceTree = "<group>"; };
+		72EC05A817E7B1BE00DCB9A3 /* CEPinchInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEPinchInteractionController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +194,8 @@
 				7273236617DFBF140072C7FD /* CEBaseInteractionController.m */,
 				7273236717DFBF140072C7FD /* CESwipeInteractionController.h */,
 				7273236817DFBF140072C7FD /* CESwipeInteractionController.m */,
+				72EC05A717E7B1BE00DCB9A3 /* CEPinchInteractionController.h */,
+				72EC05A817E7B1BE00DCB9A3 /* CEPinchInteractionController.m */,
 			);
 			name = InteractionControllers;
 			path = ../InteractionControllers;
@@ -297,6 +302,7 @@
 				72C15E1717E19A940056B3F9 /* CEFoldAnimationController.m in Sources */,
 				72C15E1417E10E7B0056B3F9 /* CEExplodeAnimationController.m in Sources */,
 				72C15E1117E10C620056B3F9 /* CECrossfadeAnimationController.m in Sources */,
+				72EC05A917E7B1BE00DCB9A3 /* CEPinchInteractionController.m in Sources */,
 				7273233017DFBD4D0072C7FD /* AppDelegate.m in Sources */,
 				7273232C17DFBD4D0072C7FD /* main.m in Sources */,
 				7273236017DFBEBF0072C7FD /* CETurnAnimationController.m in Sources */,

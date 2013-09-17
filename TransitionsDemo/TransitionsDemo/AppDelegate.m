@@ -7,11 +7,13 @@
 //
 
 #import "AppDelegate.h"
+#import "CEFoldAnimationController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    AppDelegateAccessor.navigationControllerAnimationController = [CEFoldAnimationController new];
     return YES;
 }
 

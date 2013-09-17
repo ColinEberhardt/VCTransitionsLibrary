@@ -20,7 +20,7 @@ typedef NS_ENUM(NSInteger, CEInteractionOperation) {
 
 /**
  Connects this interaction controller to the given view controller.
- @param viewController An accumulator function to be invoked on each element.
+ @param viewController The view controller which this interaction should add a gesture recognizer to.
  @param operation The operation that this interaction initiates when.
 */
 - (void)wireToViewController:(UIViewController*)viewController forOperation:(CEInteractionOperation)operation;
