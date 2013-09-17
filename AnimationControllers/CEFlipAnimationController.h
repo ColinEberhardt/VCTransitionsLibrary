@@ -8,6 +8,9 @@
 
 #import "CEReversibleAnimationController.h"
 
+/**
+ Animates between the two view controllers using a page-flip transition.
+ */
 @interface CEFlipAnimationController : CEReversibleAnimationController
 
 @end

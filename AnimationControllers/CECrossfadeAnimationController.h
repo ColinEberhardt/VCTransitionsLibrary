@@ -8,6 +8,9 @@
 
 #import "CEReversibleAnimationController.h"
 
+/**
+ Animates between the two view controllers by performing a simple cross-fade. 
+ */
 @interface CECrossfadeAnimationController : CEReversibleAnimationController
 
 @end

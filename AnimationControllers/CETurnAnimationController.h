@@ -14,6 +14,9 @@ typedef NS_ENUM(NSInteger, CEDirection) {
     CEDirectionVertical
 };
 
+/**
+ Animates between the two view controllers by performing a 3D flip, to reveal the destination view on the back.The turn animation has a `flipDirection` property that specifies the turn orientation.
+ */
 @interface CETurnAnimationController : CEReversibleAnimationController
 
 @property (nonatomic, assign) CEDirection flipDirection;

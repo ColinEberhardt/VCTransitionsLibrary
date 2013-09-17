@@ -11,6 +11,13 @@
 
 @implementation CETurnAnimationController
 
+- (id)init {
+    if (self = [super init]) {
+        self.flipDirection = CEDirectionVertical;
+    }
+    return self;
+}
+
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext fromVC:(UIViewController *)fromVC toVC:(UIViewController *)toVC fromView:(UIView *)fromView toView:(UIView *)toView {
     
     // Add the toView to the container
