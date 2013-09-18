@@ -8,9 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ An enumeration that describes the navigation operation that an interaction controller should initiate.
+ */
 typedef NS_ENUM(NSInteger, CEInteractionOperation) {
+    /**
+     Indicates that the interaction controller should start a navigation controller 'pop' navigation.
+     */
     CEInteractionOperationPop,
-    CEInteractionOperationDismiss
+    /**
+     Indicates that the interaction controller should initiate a modal 'dismiss'.
+     */
+    CEInteractionOperationDismiss,
+    /**
+     Indicates that the interaction controller should navigate between tabs.
+     */
+    CEInteractionOperationTab
 };
 
 /**

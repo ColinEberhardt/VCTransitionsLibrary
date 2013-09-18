@@ -40,34 +40,60 @@
     CGPoint translation = [gestureRecognizer translationInView:gestureRecognizer.view.superview];
     
     switch (gestureRecognizer.state) {
-        case UIGestureRecognizerStateBegan:
-            // start an interactive transition!
-            self.interactionInProgress = YES;
+        case UIGestureRecognizerStateBegan: {
             
-            // perform the required operation
+            BOOL rightToLeftSwipe = translation.x < 0;
+            
+            // perform the required navigation operation ...
+            
             if (_operation == CEInteractionOperationPop) {
-                [_viewController.navigationController popViewControllerAnimated:YES];
+                // for pop operation, fire on right-to-left
+                if (rightToLeftSwipe) {
+                    self.interactionInProgress = YES;
+                    [_viewController.navigationController popViewControllerAnimated:YES];
+                }
+            } else if (_operation == CEInteractionOperationTab) {
+                // for tab controllers, we need to determine which direction to transition
+                if (rightToLeftSwipe) {
+                    if (_viewController.tabBarController.selectedIndex < _viewController.tabBarController.viewControllers.count - 1) {
+                        self.interactionInProgress = YES;
+                        _viewController.tabBarController.selectedIndex++;
+                    }
+                    
+                } else {
+                    if (_viewController.tabBarController.selectedIndex > 0) {
+                        self.interactionInProgress = YES;
+                        _viewController.tabBarController.selectedIndex--;
+                    }
+                }
             } else {
+                // for dismiss, fire regardless of the translation direction
+                self.interactionInProgress = YES;
                 [_viewController dismissViewControllerAnimated:YES completion:nil];
             }
             break;
+        }
         case UIGestureRecognizerStateChanged: {
-            // compute the current position
-            CGFloat fraction = -(translation.x / 200.0);
-            fraction = fminf(fmaxf(fraction, 0.0), 1.0);
-            _shouldCompleteTransition = (fraction > 0.5);
-            
-            [self updateInteractiveTransition:fraction];
+            if (self.interactionInProgress) {
+                // compute the current position
+                CGFloat fraction = fabsf(translation.x / 200.0);
+                fraction = fminf(fmaxf(fraction, 0.0), 1.0);
+                _shouldCompleteTransition = (fraction > 0.5);
+                
+                [self updateInteractiveTransition:fraction];
+            }
             break;
         }
         case UIGestureRecognizerStateEnded:
         case UIGestureRecognizerStateCancelled:
-            self.interactionInProgress = NO;
-            if (!_shouldCompleteTransition || gestureRecognizer.state == UIGestureRecognizerStateCancelled) {
-                [self cancelInteractiveTransition];
-            }
-            else {
-                [self finishInteractiveTransition];
+            if (self.interactionInProgress) {
+                self.interactionInProgress = NO;
+                if (!_shouldCompleteTransition || gestureRecognizer.state == UIGestureRecognizerStateCancelled) {
+                    [self cancelInteractiveTransition];
+                }
+                else {
+                    [self finishInteractiveTransition];
+                }
             }
             break;
         default:

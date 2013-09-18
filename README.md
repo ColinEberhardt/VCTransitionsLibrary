@@ -2,7 +2,7 @@
 
 With iOS 7 you can easily create custom view controller transitions that can be used in a range of contexts (push, pop, modal …). This project provides a library of custom animations which can be dropped directly into your project. It also has a number of 'interaction controllers' which can be used with any of the custom animations in order to make your transitions interactive.
 
-The library currently contains the following animations:
+The library currently contains the following animations, which can be made interactive with either a swipe or pinch gesture.
  
 <table>
 <tr>
@@ -25,7 +25,7 @@ The library currently contains the following animations:
 </tr>
 </table>
 
-### Contents
+## Contents
 
 * [A brief introduction to custom transitions](#intro)
 * [Adding custom transitions to your project](#adding)
@@ -33,6 +33,7 @@ The library currently contains the following animations:
   * [Using an animation controller](#animation)
     * [Custom present / dismiss transitions](#animationPresent)
     * [Custom navigation controller transitions](#animationNavigation)
+    * [Custom tab bar controller transitions](#animationTab)
   * [Using an interaction controller](#interaction)
     * [Interactive dismiss transitions](#interactionDismiss)
     * [Interactive pop transitions](#interactionPop)
@@ -88,6 +89,27 @@ Notice that this message has an 'operation' argument that allows you to return d
     return _animationController;
 }
 ```
+
+#### <a id="animationTab"></a>Custom tab bar controller transitions
+
+The `UITabBarControllerDelegate` protocol has methods that can be used to provide animation controllers. Simply return an animation controller in response to the `tabBarController: animationControllerForTransitionFromViewController: toViewController:` 
+message.
+
+In order to determine the animation direction, you can compare the indices of the two view controller as shown below:
+
+```objc
+- (id <UIViewControllerAnimatedTransitioning>)tabBarController:(UITabBarController *)tabBarController
+            animationControllerForTransitionFromViewController:(UIViewController *)fromVC
+                                              toViewController:(UIViewController *)toVC {
+    
+    NSUInteger fromVCIndex = [tabBarController.viewControllers indexOfObject:fromVC];
+    NSUInteger toVCIndex = [tabBarController.viewControllers indexOfObject:toVC];
+    
+    _animationController.reverse = fromVCIndex < toVCIndex;
+    return _animationController;
+}
+```
+
 
 ### <a id="interaction"></a>Using an interaction controller
 
@@ -149,11 +171,9 @@ CESwipeInteractionController *_interactionController;
                    fromViewController:(UIViewController *)fromVC
                      toViewController:(UIViewController *)toVC {
     
-    // when a push occurs, wire the interaction controller to the to- view controller
-    if (operation == UINavigationControllerOperationPush) {
-        [_interactionController wireToViewController:presented 
-                                        forOperation:CEInteractionOperationPop];
-    }
+    // wire the interaction controller to the to- view controller
+    [_interactionController wireToViewController:toVC
+                                    forOperation:CEInteractionOperationPop];
     
     _animationController.reverse = operation == UINavigationControllerOperationPop;
     
@@ -168,6 +188,67 @@ CESwipeInteractionController *_interactionController;
     return _interactionController.interactionInProgress
                 ? _interactionController : nil;
 }
+```
+
+#### <a id="interactionPop"></a>Interactive tab transitions
+
+The `UITabBarControllerDelegate` protocol has an equivalent method for returning interactions controllers. As with the navigation controller example above, the interaction controller needs to add its gesture recognisers to the view controllers that the tab bar controller navigates between. Unfortunately the tab bar delegate methods don't get fired when the first view controller is presented, so I opt for a slightly messier implementation using Key-Value observing:
+
+```objc
+@implementation TabBarViewController {
+    CEFoldAnimationController *_animationController;
+    CESwipeInteractionController *_swipeInteractionController;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]) {
+        self.delegate = self;
+        
+        // create the interaction / animation controllers
+        _swipeInteractionController = [CESwipeInteractionController new];
+        _animationController = [CEFoldAnimationController new];
+        _animationController.folds = 3;
+        
+        // observe changes in the currently presented view controller
+        [self addObserver:self
+               forKeyPath:@"selectedViewController"
+                  options:NSKeyValueObservingOptionNew
+                  context:nil];
+    }
+    return self;
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context
+{
+    if ([keyPath isEqualToString:@"selectedViewController"] )
+    {
+    	// wire the interaction controller to the view controller
+        [_swipeInteractionController wireToViewController:self.selectedViewController
+                                             forOperation:CEInteractionOperationTab];
+    }
+}
+
+
+
+- (id <UIViewControllerAnimatedTransitioning>)tabBarController:(UITabBarController *)tabBarController
+            animationControllerForTransitionFromViewController:(UIViewController *)fromVC
+                                              toViewController:(UIViewController *)toVC {
+    
+    NSUInteger fromVCIndex = [tabBarController.viewControllers indexOfObject:fromVC];
+    NSUInteger toVCIndex = [tabBarController.viewControllers indexOfObject:toVC];
+    
+    _animationController.reverse = fromVCIndex < toVCIndex;
+    return _animationController;
+}
+
+-(id<UIViewControllerInteractiveTransitioning>)tabBarController:(UITabBarController *)tabBarController interactionControllerForAnimationController:(id<UIViewControllerAnimatedTransitioning>)animationController
+{
+    return _swipeInteractionController.interactionInProgress ? _swipeInteractionController : nil;
+}
+
+@end
 ```
 
 ## <a id="library"></a>Transitions Library

@@ -27,7 +27,7 @@
 - (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC {
     
     // when a push occurs, wire the interaction controller to the to- view controller
-    if (operation == UINavigationControllerOperationPush && AppDelegateAccessor.navigationControllerInteractionController) {
+    if (AppDelegateAccessor.navigationControllerInteractionController) {
         [AppDelegateAccessor.navigationControllerInteractionController wireToViewController:toVC forOperation:CEInteractionOperationPop];
     }
     
