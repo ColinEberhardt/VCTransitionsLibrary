@@ -27,17 +27,17 @@ The library currently contains the following animations, which can be made inter
 
 ## Contents
 
-* [A brief introduction to custom transitions](#intro)
-* [Adding custom transitions to your project](#adding)
-  * [Grabbing the code](#grabbing)
-  * [Using an animation controller](#animation)
-    * [Custom present / dismiss transitions](#animationPresent)
-    * [Custom navigation controller transitions](#animationNavigation)
-    * [Custom tab bar controller transitions](#animationTab)
-  * [Using an interaction controller](#interaction)
-    * [Interactive dismiss transitions](#interactionDismiss)
-    * [Interactive pop transitions](#interactionPop)
-* [Transitions Library](#library)
+ * [A brief introduction to custom transitions](#intro)
+ * [Adding custom transitions to your project](#adding)
+   * [Grabbing the code](#grabbing)
+   * [Using an animation controller](#animation)
+     * [Custom present / dismiss transitions](#animationPresent)
+     * [Custom navigation controller transitions](#animationNavigation)
+     * [Custom tab bar controller transitions](#animationTab)
+   * [Using an interaction controller](#interaction)
+     * [Interactive dismiss transitions](#interactionDismiss)
+     * [Interactive pop transitions](#interactionPop)
+ * [Transitions Library](#library)
 
 
 ## <a id="intro"></a>A brief introduction to custom transitions
@@ -59,7 +59,7 @@ This sections gives a brief overview of the steps required to add custom view co
 
 There are a couple of ways you can incorporate transitions from this library into your code:
 
- 1. **Cocoapods** - simply execute `pod install View-Controller-Transitions-Library`.
+ 1. **Cocoapods** - simply add a reference to **VCTransitionsLibrary** to your pod file.
  2. **Manual file copy** - if you are not using Cocoapods, you can simply copy the required files into your project. The `AnimationControllers` and `InteractionControllers` folders contain all the code that is required.
  
 ### <a id="animation"></a>Using an animation controller
