@@ -27,20 +27,21 @@ The library currently contains the following animations, which can be made inter
 
 ## Contents
 
- * [A brief introduction to custom transitions](#intro)
- * [Adding custom transitions to your project](#adding)
-   * [Grabbing the code](#grabbing)
-   * [Using an animation controller](#animation)
-     * [Custom present / dismiss transitions](#animationPresent)
-     * [Custom navigation controller transitions](#animationNavigation)
-     * [Custom tab bar controller transitions](#animationTab)
-   * [Using an interaction controller](#interaction)
-     * [Interactive dismiss transitions](#interactionDismiss)
-     * [Interactive pop transitions](#interactionPop)
- * [Transitions Library](#library)
+ * [A brief introduction to custom transitions](#a-brief-introduction-to-custom-transitions)
+ * [Adding custom transitions to your project](#adding-custom-transitions-to-your-project)
+   * [Grabbing the code](#grabbing-the-code)
+   * [Using an animation controller](#using-an-animation-controller)
+     * [Custom present / dismiss transitions](#custom-present--dismiss-transitions)
+     * [Custom navigation controller transitions](#custom-navigation-controller-transitions)
+     * [Custom tab bar controller transitions](#custom-tab-bar-controller-transitions)
+   * [Using an interaction controller](#using-an-interaction-controller)
+     * [Interactive dismiss transitions](#interactive-dismiss-transitions)
+     * [Interactive pop transitions](#interactive-pop-transitions)
+     * [Interactive tab transitions](#interactive-tab-transitions)
+ * [Transitions library](#transitions-library)
 
 
-## <a id="intro"></a>A brief introduction to custom transitions
+## A brief introduction to custom transitions
 
 The following provides a very brief introduction to the concepts, for more detailed coverage I would thoroughly recommend reading Chapter 3 of [iOS 7 By Tutorials](http://www.raywenderlich.com/store/ios-7-by-tutorials?source=ceberhardt) - which I wrote! (I've heard the other 15 chapters are pretty good too ;-)
 
