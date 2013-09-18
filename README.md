@@ -42,7 +42,7 @@ The library currently contains the following animations, which can be made inter
 
 ## <a id="intro"></a>A brief introduction to custom transitions
 
-The following provides a very brief introduction to the concepts, for more detailed coverage I would thoroughly recommend reading Chapter 5 of iOS 7 By Tutorials - which I wrote! (I've heard the other ~20 are pretty good too ;-)
+The following provides a very brief introduction to the concepts, for more detailed coverage I would thoroughly recommend reading Chapter 3 of [iOS 7 By Tutorials](http://www.raywenderlich.com/store/ios-7-by-tutorials?source=ceberhardt) - which I wrote! (I've heard the other 15 chapters are pretty good too ;-)
 
 There are two key classes involved in a custom transition:
 
