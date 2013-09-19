@@ -134,13 +134,13 @@
 - (NSArray*)createSnapshots:(UIView*)view afterScreenUpdates:(BOOL) afterUpdates{
     UIView* containerView = view.superview;
     
-    // snapshot the part of the from view that 'flips'
+    // snapshot the left-hand side of the view
     CGRect snapshotRegion = CGRectMake(0, 0, view.frame.size.width / 2, view.frame.size.height);
     UIView *leftHandView = [view resizableSnapshotViewFromRect:snapshotRegion  afterScreenUpdates:afterUpdates withCapInsets:UIEdgeInsetsZero];
     leftHandView.frame = snapshotRegion;
     [containerView addSubview:leftHandView];
     
-    // snapshot the part of the from view that remains static
+    // snapshot the right-hand side of the view
     snapshotRegion = CGRectMake(view.frame.size.width / 2, 0, view.frame.size.width / 2, view.frame.size.height);
     UIView *rightHandView = [view resizableSnapshotViewFromRect:snapshotRegion  afterScreenUpdates:afterUpdates withCapInsets:UIEdgeInsetsZero];
     rightHandView.frame = snapshotRegion;
