@@ -30,7 +30,7 @@
 		72EC060017E8DF5D00DCB9A3 /* CETurnAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72EC05FA17E8DF5D00DCB9A3 /* CETurnAnimationController.m */; };
 		72EC060317E9655300DCB9A3 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72EC060217E9655300DCB9A3 /* TabBarViewController.m */; };
 		72EC060917E96C2500DCB9A3 /* CEBaseInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72EC060717E96C2500DCB9A3 /* CEBaseInteractionController.m */; };
-		72EC060A17E96C2500DCB9A3 /* CESwipeInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72EC060817E96C2500DCB9A3 /* CESwipeInteractionController.m */; };
+		72EE96DE17EF6A5D0097DF82 /* CEHorizontalSwipeInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72EE96DD17EF6A5D0097DF82 /* CEHorizontalSwipeInteractionController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,9 +79,9 @@
 		72EC060117E9655300DCB9A3 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
 		72EC060217E9655300DCB9A3 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 		72EC060517E96C2500DCB9A3 /* CEBaseInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CEBaseInteractionController.h; path = ../InteractionControllers/CEBaseInteractionController.h; sourceTree = "<group>"; };
-		72EC060617E96C2500DCB9A3 /* CESwipeInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CESwipeInteractionController.h; path = ../InteractionControllers/CESwipeInteractionController.h; sourceTree = "<group>"; };
 		72EC060717E96C2500DCB9A3 /* CEBaseInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CEBaseInteractionController.m; path = ../InteractionControllers/CEBaseInteractionController.m; sourceTree = "<group>"; };
-		72EC060817E96C2500DCB9A3 /* CESwipeInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CESwipeInteractionController.m; path = ../InteractionControllers/CESwipeInteractionController.m; sourceTree = "<group>"; };
+		72EE96DC17EF6A5D0097DF82 /* CEHorizontalSwipeInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CEHorizontalSwipeInteractionController.h; path = ../InteractionControllers/CEHorizontalSwipeInteractionController.h; sourceTree = "<group>"; };
+		72EE96DD17EF6A5D0097DF82 /* CEHorizontalSwipeInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CEHorizontalSwipeInteractionController.m; path = ../InteractionControllers/CEHorizontalSwipeInteractionController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,10 +208,10 @@
 		72EC060417E96C0C00DCB9A3 /* InteractionControllers */ = {
 			isa = PBXGroup;
 			children = (
+				72EE96DC17EF6A5D0097DF82 /* CEHorizontalSwipeInteractionController.h */,
+				72EE96DD17EF6A5D0097DF82 /* CEHorizontalSwipeInteractionController.m */,
 				72EC060517E96C2500DCB9A3 /* CEBaseInteractionController.h */,
 				72EC060717E96C2500DCB9A3 /* CEBaseInteractionController.m */,
-				72EC060617E96C2500DCB9A3 /* CESwipeInteractionController.h */,
-				72EC060817E96C2500DCB9A3 /* CESwipeInteractionController.m */,
 			);
 			name = InteractionControllers;
 			sourceTree = "<group>";
@@ -315,7 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72EC060317E9655300DCB9A3 /* TabBarViewController.m in Sources */,
-				72EC060A17E96C2500DCB9A3 /* CESwipeInteractionController.m in Sources */,
+				72EE96DE17EF6A5D0097DF82 /* CEHorizontalSwipeInteractionController.m in Sources */,
 				72EC05D017E8DF3D00DCB9A3 /* ViewController.m in Sources */,
 				72EC05FF17E8DF5D00DCB9A3 /* CEReversibleAnimationController.m in Sources */,
 				72EC05C717E8DF3D00DCB9A3 /* AppDelegate.m in Sources */,
@@ -544,6 +544,7 @@
 				72EC05EA17E8DF3D00DCB9A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		72EC05EB17E8DF3D00DCB9A3 /* Build configuration list for PBXNativeTarget "TabBarDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -552,6 +553,7 @@
 				72EC05ED17E8DF3D00DCB9A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

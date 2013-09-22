@@ -1,14 +1,14 @@
 //
-//  SwipeINteractionController.m
-//  ILoveCatz
+//  CEVerticalSwipeInteactionController.m
+//  TransitionsDemo
 //
-//  Created by Colin Eberhardt on 22/08/2013.
-//  Copyright (c) 2013 com.razeware. All rights reserved.
+//  Created by Colin Eberhardt on 22/09/2013.
+//  Copyright (c) 2013 Colin Eberhardt. All rights reserved.
 //
 
-#import "CESwipeInteractionController.h"
+#import "CEVerticalSwipeInteractionController.h"
 
-@implementation CESwipeInteractionController {
+@implementation CEVerticalSwipeInteractionController {
     BOOL _shouldCompleteTransition;
     UIViewController *_viewController;
     UIPanGestureRecognizer *_gesture;
@@ -20,6 +20,12 @@
 }
 
 - (void)wireToViewController:(UIViewController *)viewController forOperation:(CEInteractionOperation)operation{
+    
+    if (operation == CEInteractionOperationTab) {
+        @throw [NSException exceptionWithName:NSInternalInconsistencyException
+                                       reason:@"You cannot use a vertical swipe interaction with a tabbar controller - that would be silly!"
+                                     userInfo:nil];
+    }
     _operation = operation;
     _viewController = viewController;
     [self prepareGestureRecognizerInView:viewController.view];
@@ -42,29 +48,15 @@
     switch (gestureRecognizer.state) {
         case UIGestureRecognizerStateBegan: {
             
-            BOOL rightToLeftSwipe = translation.x < 0;
+            BOOL topToBottomSwipe = translation.y > 0;
             
             // perform the required navigation operation ...
             
             if (_operation == CEInteractionOperationPop) {
-                // for pop operation, fire on right-to-left
-                if (rightToLeftSwipe) {
+                // for pop operation, fire on top-to-bottom
+                if (topToBottomSwipe) {
                     self.interactionInProgress = YES;
                     [_viewController.navigationController popViewControllerAnimated:YES];
-                }
-            } else if (_operation == CEInteractionOperationTab) {
-                // for tab controllers, we need to determine which direction to transition
-                if (rightToLeftSwipe) {
-                    if (_viewController.tabBarController.selectedIndex < _viewController.tabBarController.viewControllers.count - 1) {
-                        self.interactionInProgress = YES;
-                        _viewController.tabBarController.selectedIndex++;
-                    }
-                    
-                } else {
-                    if (_viewController.tabBarController.selectedIndex > 0) {
-                        self.interactionInProgress = YES;
-                        _viewController.tabBarController.selectedIndex--;
-                    }
                 }
             } else {
                 // for dismiss, fire regardless of the translation direction
@@ -76,7 +68,7 @@
         case UIGestureRecognizerStateChanged: {
             if (self.interactionInProgress) {
                 // compute the current position
-                CGFloat fraction = fabsf(translation.x / 200.0);
+                CGFloat fraction = fabsf(translation.y / 200.0);
                 fraction = fminf(fmaxf(fraction, 0.0), 1.0);
                 _shouldCompleteTransition = (fraction > 0.5);
                 
@@ -100,6 +92,5 @@
             break;
     }
 }
-
 
 @end

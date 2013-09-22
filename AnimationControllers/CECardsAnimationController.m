@@ -58,7 +58,7 @@
         }];
 
     } completion:^(BOOL finished) {
-        [transitionContext completeTransition:YES];
+        [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
     }];
     
     
@@ -89,7 +89,7 @@
         }];
         
         // animate the to- view into place
-        [UIView addKeyframeWithRelativeStartTime:0.3f relativeDuration:0.45f animations:^{
+        [UIView addKeyframeWithRelativeStartTime:0.35f relativeDuration:0.35f animations:^{
             toView.layer.transform = t1;
             toView.alpha = 1.0;
         }];
@@ -97,7 +97,11 @@
             toView.layer.transform = CATransform3DIdentity;
         }];
     } completion:^(BOOL finished) {
-        [transitionContext completeTransition:YES];
+        if ([transitionContext transitionWasCancelled]) {
+            toView.layer.transform = CATransform3DIdentity;
+            toView.alpha = 1.0;
+        }
+        [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
     }];
 }
 

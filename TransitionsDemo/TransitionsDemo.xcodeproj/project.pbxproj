@@ -23,7 +23,7 @@
 		7273236017DFBEBF0072C7FD /* CETurnAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7273235D17DFBEBF0072C7FD /* CETurnAnimationController.m */; };
 		7273236317DFBEFE0072C7FD /* CEReversibleAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7273236217DFBEFE0072C7FD /* CEReversibleAnimationController.m */; };
 		7273236917DFBF140072C7FD /* CEBaseInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7273236617DFBF140072C7FD /* CEBaseInteractionController.m */; };
-		7273236A17DFBF140072C7FD /* CESwipeInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7273236817DFBF140072C7FD /* CESwipeInteractionController.m */; };
+		7273236A17DFBF140072C7FD /* CEHorizontalSwipeInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7273236817DFBF140072C7FD /* CEHorizontalSwipeInteractionController.m */; };
 		7273236D17DFC0690072C7FD /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7273236C17DFC0690072C7FD /* NavigationController.m */; };
 		7273237017DFC4710072C7FD /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7273236F17DFC4710072C7FD /* SettingsViewController.m */; };
 		72C15E1117E10C620056B3F9 /* CECrossfadeAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C15E1017E10C620056B3F9 /* CECrossfadeAnimationController.m */; };
@@ -31,6 +31,7 @@
 		72C15E1717E19A940056B3F9 /* CEFoldAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C15E1617E19A940056B3F9 /* CEFoldAnimationController.m */; };
 		72EC05A917E7B1BE00DCB9A3 /* CEPinchInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72EC05A817E7B1BE00DCB9A3 /* CEPinchInteractionController.m */; };
 		72EE96D817EF47A60097DF82 /* CECardsAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72EE96D717EF47A60097DF82 /* CECardsAnimationController.m */; };
+		72EE96DB17EF66040097DF82 /* CEVerticalSwipeInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72EE96DA17EF66040097DF82 /* CEVerticalSwipeInteractionController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,8 +69,8 @@
 		7273236217DFBEFE0072C7FD /* CEReversibleAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEReversibleAnimationController.m; sourceTree = "<group>"; };
 		7273236517DFBF140072C7FD /* CEBaseInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEBaseInteractionController.h; sourceTree = "<group>"; };
 		7273236617DFBF140072C7FD /* CEBaseInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEBaseInteractionController.m; sourceTree = "<group>"; };
-		7273236717DFBF140072C7FD /* CESwipeInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CESwipeInteractionController.h; sourceTree = "<group>"; };
-		7273236817DFBF140072C7FD /* CESwipeInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CESwipeInteractionController.m; sourceTree = "<group>"; };
+		7273236717DFBF140072C7FD /* CEHorizontalSwipeInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEHorizontalSwipeInteractionController.h; sourceTree = "<group>"; };
+		7273236817DFBF140072C7FD /* CEHorizontalSwipeInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEHorizontalSwipeInteractionController.m; sourceTree = "<group>"; };
 		7273236B17DFC0690072C7FD /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
 		7273236C17DFC0690072C7FD /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
 		7273236E17DFC4710072C7FD /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
@@ -84,6 +85,8 @@
 		72EC05A817E7B1BE00DCB9A3 /* CEPinchInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEPinchInteractionController.m; sourceTree = "<group>"; };
 		72EE96D617EF47A60097DF82 /* CECardsAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CECardsAnimationController.h; sourceTree = "<group>"; };
 		72EE96D717EF47A60097DF82 /* CECardsAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CECardsAnimationController.m; sourceTree = "<group>"; };
+		72EE96D917EF66040097DF82 /* CEVerticalSwipeInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEVerticalSwipeInteractionController.h; sourceTree = "<group>"; };
+		72EE96DA17EF66040097DF82 /* CEVerticalSwipeInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEVerticalSwipeInteractionController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,10 +200,12 @@
 			children = (
 				7273236517DFBF140072C7FD /* CEBaseInteractionController.h */,
 				7273236617DFBF140072C7FD /* CEBaseInteractionController.m */,
-				7273236717DFBF140072C7FD /* CESwipeInteractionController.h */,
-				7273236817DFBF140072C7FD /* CESwipeInteractionController.m */,
+				7273236717DFBF140072C7FD /* CEHorizontalSwipeInteractionController.h */,
+				7273236817DFBF140072C7FD /* CEHorizontalSwipeInteractionController.m */,
 				72EC05A717E7B1BE00DCB9A3 /* CEPinchInteractionController.h */,
 				72EC05A817E7B1BE00DCB9A3 /* CEPinchInteractionController.m */,
+				72EE96D917EF66040097DF82 /* CEVerticalSwipeInteractionController.h */,
+				72EE96DA17EF66040097DF82 /* CEVerticalSwipeInteractionController.m */,
 			);
 			name = InteractionControllers;
 			path = ../InteractionControllers;
@@ -311,9 +316,10 @@
 				7273233017DFBD4D0072C7FD /* AppDelegate.m in Sources */,
 				7273232C17DFBD4D0072C7FD /* main.m in Sources */,
 				7273236017DFBEBF0072C7FD /* CETurnAnimationController.m in Sources */,
-				7273236A17DFBF140072C7FD /* CESwipeInteractionController.m in Sources */,
+				7273236A17DFBF140072C7FD /* CEHorizontalSwipeInteractionController.m in Sources */,
 				7273236D17DFC0690072C7FD /* NavigationController.m in Sources */,
 				7273237017DFC4710072C7FD /* SettingsViewController.m in Sources */,
+				72EE96DB17EF66040097DF82 /* CEVerticalSwipeInteractionController.m in Sources */,
 				7273235F17DFBEBF0072C7FD /* CEFlipAnimationController.m in Sources */,
 				7273236317DFBEFE0072C7FD /* CEReversibleAnimationController.m in Sources */,
 				72EE96D817EF47A60097DF82 /* CECardsAnimationController.m in Sources */,

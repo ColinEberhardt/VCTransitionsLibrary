@@ -7,13 +7,15 @@
 //
 
 #import "AppDelegate.h"
-#import "CEFoldAnimationController.h"
+#import "CECardsAnimationController.h"
+#import "CEVerticalSwipeInteractionController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    AppDelegateAccessor.navigationControllerAnimationController = [CEFoldAnimationController new];
+    //AppDelegateAccessor.navigationControllerAnimationController = [CECardsAnimationController new];
+    //AppDelegateAccessor.navigationControllerInteractionController = [CEVerticalSwipeInteactionController new];
     return YES;
 }
 

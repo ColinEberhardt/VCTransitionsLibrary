@@ -24,7 +24,7 @@
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
         _animationControllers = @[@"None", @"Cards", @"Fold", @"Explode", @"Flip", @"Turn", @"Crossfade"];
-        _interactionControllers = @[@"None", @"Swipe", @"Pinch"];
+        _interactionControllers = @[@"None", @"HorizontalSwipe", @"VerticalSwipe", @"Pinch"];
     }
     return self;
 }
@@ -40,15 +40,11 @@
     
     NSString *animationClass = NSStringFromClass(instance.class);
     
-    // convert 'CEFlipAnimationController' to 'Flip'
-    NSMutableString *transitionName = [[NSMutableString alloc] initWithString:[animationClass substringWithRange:NSMakeRange(2, 1)]];
-    for(int i = 3; i < animationClass.length; i++) {
-        NSString *ch = [animationClass substringWithRange:NSMakeRange(i, 1)];
-        if ([ch rangeOfCharacterFromSet:[NSCharacterSet uppercaseLetterCharacterSet]].location != NSNotFound)
-            break;
-        [transitionName appendString:ch];
-    }
-    
+    NSMutableString *transitionName = [[NSMutableString alloc] initWithString:animationClass];
+    [transitionName replaceOccurrencesOfString:@"CE" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, transitionName.length)];
+    [transitionName replaceOccurrencesOfString:@"AnimationController" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, transitionName.length)];
+    [transitionName replaceOccurrencesOfString:@"InteractionController" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, transitionName.length)];
+
     return transitionName;
 }
 
@@ -61,6 +57,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section < 2) {
+        // an animation controller was selected
         NSString* transitionName = _animationControllers[indexPath.row];
         NSString *className = [NSString stringWithFormat:@"CE%@AnimationController", transitionName];
         id transitionInstance = [[NSClassFromString(className) alloc] init];
@@ -72,6 +69,7 @@
             AppDelegateAccessor.settingsAnimationController = transitionInstance;
         }
     } else {
+        // an interaction cntroller was selected
         NSString* transitionName = _interactionControllers[indexPath.row];
         NSString *className = [NSString stringWithFormat:@"CE%@InteractionController", transitionName];
         id transitionInstance = [[NSClassFromString(className) alloc] init];

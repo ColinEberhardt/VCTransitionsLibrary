@@ -8,7 +8,7 @@
 
 #import "TabBarViewController.h"
 #import "CEFoldAnimationController.h"
-#import "CESwipeInteractionController.h"
+#import "CEHorizontalSwipeInteractionController.h"
 
 @interface TabBarViewController () <UITabBarControllerDelegate>
 
@@ -16,7 +16,7 @@
 
 @implementation TabBarViewController {
     CEFoldAnimationController *_animationController;
-    CESwipeInteractionController *_swipeInteractionController;
+    CEHorizontalSwipeInteractionController *_swipeInteractionController;
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
@@ -24,7 +24,7 @@
         self.delegate = self;
         
         // create the interaction / animation controllers
-        _swipeInteractionController = [CESwipeInteractionController new];
+        _swipeInteractionController = [CEHorizontalSwipeInteractionController new];
         _animationController = [CEFoldAnimationController new];
         _animationController.folds = 3;
         
