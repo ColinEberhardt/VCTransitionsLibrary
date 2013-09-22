@@ -19,9 +19,11 @@ The library currently contains the following animations, which can be made inter
 </tr>
 <tr>
 <th>Turn</th>
+<th>Cards</th>
 </tr>
 <tr>
 <td><img src="Screenshots/thumbnails/Turn/1a.png"/></td>
+<td><img src="Screenshots/thumbnails/Cards/2.png"/></td>
 </tr>
 </table>
 
@@ -305,4 +307,15 @@ Animates between the two view controllers by slicing the from- view controller i
 ![](Screenshots/thumbnails/Explode/2.png)
 ![](Screenshots/thumbnails/Explode/3.png)
 ![](Screenshots/thumbnails/Explode/4.png)
+
+### Cards animation - CECardsAnimationController
+
+Gives the impression of one view controller pushing the other to the back. It looks a lot more cool than these static screenshots!
+
+(courtesy of Tope - AppDesignVault)
+
+![](Screenshots/thumbnails/Cards/1.png)
+![](Screenshots/thumbnails/Cards/2.png)
+![](Screenshots/thumbnails/Cards/3.png)
+![](Screenshots/thumbnails/Cards/4.png)
 
