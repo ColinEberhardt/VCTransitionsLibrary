@@ -30,6 +30,7 @@
 		72C15E1417E10E7B0056B3F9 /* CEExplodeAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C15E1317E10E7B0056B3F9 /* CEExplodeAnimationController.m */; };
 		72C15E1717E19A940056B3F9 /* CEFoldAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C15E1617E19A940056B3F9 /* CEFoldAnimationController.m */; };
 		72EC05A917E7B1BE00DCB9A3 /* CEPinchInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72EC05A817E7B1BE00DCB9A3 /* CEPinchInteractionController.m */; };
+		72EE96D817EF47A60097DF82 /* CECardsAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72EE96D717EF47A60097DF82 /* CECardsAnimationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,8 @@
 		72C15E1617E19A940056B3F9 /* CEFoldAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEFoldAnimationController.m; sourceTree = "<group>"; };
 		72EC05A717E7B1BE00DCB9A3 /* CEPinchInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEPinchInteractionController.h; sourceTree = "<group>"; };
 		72EC05A817E7B1BE00DCB9A3 /* CEPinchInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEPinchInteractionController.m; sourceTree = "<group>"; };
+		72EE96D617EF47A60097DF82 /* CECardsAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CECardsAnimationController.h; sourceTree = "<group>"; };
+		72EE96D717EF47A60097DF82 /* CECardsAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CECardsAnimationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +185,8 @@
 				72C15E1317E10E7B0056B3F9 /* CEExplodeAnimationController.m */,
 				72C15E1517E19A940056B3F9 /* CEFoldAnimationController.h */,
 				72C15E1617E19A940056B3F9 /* CEFoldAnimationController.m */,
+				72EE96D617EF47A60097DF82 /* CECardsAnimationController.h */,
+				72EE96D717EF47A60097DF82 /* CECardsAnimationController.m */,
 			);
 			name = AnimationControllers;
 			path = ../AnimationControllers;
@@ -311,6 +316,7 @@
 				7273237017DFC4710072C7FD /* SettingsViewController.m in Sources */,
 				7273235F17DFBEBF0072C7FD /* CEFlipAnimationController.m in Sources */,
 				7273236317DFBEFE0072C7FD /* CEReversibleAnimationController.m in Sources */,
+				72EE96D817EF47A60097DF82 /* CECardsAnimationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
