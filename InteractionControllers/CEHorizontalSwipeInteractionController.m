@@ -80,6 +80,13 @@
                 fraction = fminf(fmaxf(fraction, 0.0), 1.0);
                 _shouldCompleteTransition = (fraction > 0.5);
                 
+                // if an interactive transitions is 100% completed via the user interaction, for some reason
+                // the animation completion block is not called, and hence the transition is not completed.
+                // This glorious hack makes sure that this doesn't happen.
+                // see: https://github.com/ColinEberhardt/VCTransitionsLibrary/issues/4
+                if (fraction >= 1.0)
+                    fraction = 0.99;
+                
                 [self updateInteractiveTransition:fraction];
             }
             break;
