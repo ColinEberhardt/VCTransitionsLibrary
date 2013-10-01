@@ -54,16 +54,19 @@
                 }
             } else if (_operation == CEInteractionOperationTab) {
                 // for tab controllers, we need to determine which direction to transition
+                NSUInteger currentIndex = _viewController.tabBarController.selectedIndex;
+                
                 if (rightToLeftSwipe) {
-                    if (_viewController.tabBarController.selectedIndex < _viewController.tabBarController.viewControllers.count - 1) {
+                    if (currentIndex < _viewController.tabBarController.viewControllers.count - 1) {
                         self.interactionInProgress = YES;
-                        _viewController.tabBarController.selectedIndex++;
+                        _viewController.tabBarController.selectedViewController = _viewController.tabBarController.viewControllers[currentIndex + 1];
+                        ;
                     }
                     
                 } else {
-                    if (_viewController.tabBarController.selectedIndex > 0) {
+                    if (currentIndex + 1 > 0) {
                         self.interactionInProgress = YES;
-                        _viewController.tabBarController.selectedIndex--;
+                        _viewController.tabBarController.selectedViewController = _viewController.tabBarController.viewControllers[currentIndex - 1];
                     }
                 }
             } else {

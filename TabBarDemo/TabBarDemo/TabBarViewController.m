@@ -43,6 +43,7 @@
 {
     if ([keyPath isEqualToString:@"selectedViewController"] )
     {
+        NSLog(@"view controller index changed - %U", self.selectedIndex);
     	// wire the interaction controller to the view controller
         [_swipeInteractionController wireToViewController:self.selectedViewController
                                              forOperation:CEInteractionOperationTab];
