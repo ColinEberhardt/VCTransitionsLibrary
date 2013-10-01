@@ -24,10 +24,14 @@
     CGFloat xFactor = 10.0f;
     CGFloat yFactor = xFactor * size.height / size.width;
     
+    // snapshot the from view, this makes subsequent snaphots more performant
+    UIView *fromViewSnapshot = [fromView snapshotViewAfterScreenUpdates:NO];
+    
+    // create a snapshot for each of the exploding pieces
     for (CGFloat x=0; x < size.width; x+= size.width / xFactor) {
         for (CGFloat y=0; y < size.height; y+= size.height / yFactor) {
             CGRect snapshotRegion = CGRectMake(x, y, size.width / xFactor, size.height / yFactor);
-            UIView *snapshot = [fromView resizableSnapshotViewFromRect:snapshotRegion  afterScreenUpdates:NO withCapInsets:UIEdgeInsetsZero];
+            UIView *snapshot = [fromViewSnapshot resizableSnapshotViewFromRect:snapshotRegion  afterScreenUpdates:NO withCapInsets:UIEdgeInsetsZero];
             snapshot.frame = snapshotRegion;
             [containerView addSubview:snapshot];
             [snapshots addObject:snapshot];
