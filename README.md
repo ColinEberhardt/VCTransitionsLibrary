@@ -20,10 +20,12 @@ The library currently contains the following animations, which can be made inter
 <tr>
 <th>Turn</th>
 <th>Cards</th>
+<th>NatGeo</th>
 </tr>
 <tr>
 <td><img src="Screenshots/thumbnails/Turn/1a.png"/></td>
 <td><img src="Screenshots/thumbnails/Cards/2.png"/></td>
+<td><img src="Screenshots/thumbnails/NatGeo/2.png"/></td>
 </tr>
 </table>
 
@@ -275,6 +277,16 @@ Animates between the two view controllers using a page-flip transition.
 ![](Screenshots/thumbnails/Flip/2.png)
 ![](Screenshots/thumbnails/Flip/3.png)
 ![](Screenshots/thumbnails/Flip/4.png)
+
+### NatGeo animation - CENatGeoAnimationController
+
+Animates between the two view controllers using transition inspired by [City Guides by National Geographic](https://itunes.apple.com/us/app/city-guides-by-national-geographic/id592453480?mt=8).
+It's an adoptation of [MHNatGeoViewControllerTransition](https://github.com/michaelhenry/MHNatGeoViewControllerTransition/) to iOS7 APIs.
+
+![](Screenshots/thumbnails/NatGeo/1.png)
+![](Screenshots/thumbnails/NatGeo/2.png)
+![](Screenshots/thumbnails/NatGeo/3.png)
+![](Screenshots/thumbnails/NatGeo/4.png)
 
 ### Turn animation - CETurnAnimationController
 
