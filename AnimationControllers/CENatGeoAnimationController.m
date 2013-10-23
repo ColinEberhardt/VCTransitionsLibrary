@@ -35,24 +35,26 @@ static const CGFloat kAnimationFirstPartRatio = 0.8f;
         
         
         //Perform animation
-        [UIView animateWithDuration:kAnimationFirstPartRatio * self.duration
-                              delay:(1.0f - kAnimationFirstPartRatio) * self.duration
-                            options:UIViewAnimationOptionCurveLinear animations:^{
-                                destinationFirstTransform(toLayer);
-                            } completion:nil];
-        
-        [UIView animateWithDuration:self.duration
-                              delay:0.0f
-                            options:0
-                         animations:^{
-                             sourceFirstTransform(fromLayer);
-                         } completion:^(BOOL finished) {
-                             CGRect oldFrame = [fromLayer frame];
-                             [fromLayer setAnchorPoint:CGPointMake(0.5f, 0.5f)];
-                             [fromLayer setFrame:oldFrame];
-                             
-                             [transitionContext completeTransition:YES];
-                         }];
+        [UIView animateKeyframesWithDuration:self.duration
+                                       delay:0.0
+                                     options:UIViewKeyframeAnimationOptionCalculationModeCubic
+                                  animations:^{
+            
+            [UIView addKeyframeWithRelativeStartTime:0.0f
+                                    relativeDuration:kAnimationFirstPartRatio
+                                            animations:^{
+                sourceFirstTransform(fromLayer);
+            }];
+            
+            [UIView addKeyframeWithRelativeStartTime:0.0f
+                                    relativeDuration:1.0f
+                                          animations:^{
+                destinationFirstTransform(toLayer);
+            }];
+            
+        } completion:^(BOOL finished) {
+            [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+        }];
         
     } else {
         fromViewController.view.userInteractionEnabled = NO;
@@ -70,22 +72,26 @@ static const CGFloat kAnimationFirstPartRatio = 0.8f;
         destinationFirstTransform(toLayer);
         
         //Perform animation
-        [UIView animateWithDuration:self.duration
-                              delay:0.0f
-                            options:0
-                         animations:^{
-                             destinationLastTransform(toLayer);
-                         } completion:nil];
-        
-        [UIView animateWithDuration:kAnimationFirstPartRatio * self.duration
-                              delay:(1.0f - kAnimationFirstPartRatio) * self.duration
-                            options:0
-                         animations:^{
-                             sourceLastTransform(fromLayer);
-                         }
-                         completion:^(BOOL finished) {
-                             [transitionContext completeTransition:YES];
-                         }];
+        [UIView animateKeyframesWithDuration:self.duration
+                                       delay:0.0
+                                     options:UIViewKeyframeAnimationOptionCalculationModeCubic
+                                  animations:^{
+            
+            [UIView addKeyframeWithRelativeStartTime:0.0f
+                                    relativeDuration:1.0f
+                                          animations:^{
+                destinationLastTransform(toLayer);
+            }];
+            
+            [UIView addKeyframeWithRelativeStartTime:(1.0f - kAnimationFirstPartRatio)
+                                    relativeDuration:kAnimationFirstPartRatio
+                                          animations:^{
+                sourceLastTransform(fromLayer);
+            }];
+            
+        } completion:^(BOOL finished) {
+            [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+        }];
     }
     
 }
