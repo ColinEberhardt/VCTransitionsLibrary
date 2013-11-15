@@ -26,9 +26,10 @@
     
     UIView* containerView = [transitionContext containerView];
     
-    // positions the to- view off the bottom of the sceen
-    CGRect offScreenFrame = containerView.frame;
-    offScreenFrame.origin.y = containerView.frame.size.height;
+    // !!!: if containerView has a transform (e.g. device is in landscape orientation) then frame cannot be used
+    CGRect frame = [transitionContext initialFrameForViewController:fromVC];
+    CGRect offScreenFrame = frame;
+    offScreenFrame.origin.y = offScreenFrame.size.height;
     toView.frame = offScreenFrame;
     
     [containerView insertSubview:toView aboveSubview:fromView];
@@ -51,10 +52,10 @@
         // this does not work with keyframes, so we siulate it by overshooting the final location in
         // the first keyframe
         [UIView addKeyframeWithRelativeStartTime:0.6f relativeDuration:0.2f animations:^{
-            toView.frame = CGRectOffset(containerView.frame, 0.0, -30.0);
+            toView.frame = CGRectMake(toView.frame.origin.x, toView.frame.origin.y-30.0, toView.frame.size.width, toView.frame.size.height);
         }];
         [UIView addKeyframeWithRelativeStartTime:0.8f relativeDuration:0.2f animations:^{
-            toView.frame = containerView.frame;
+            toView.frame = frame;
         }];
 
     } completion:^(BOOL finished) {
@@ -69,15 +70,16 @@
     UIView* containerView = [transitionContext containerView];
     
     // positions the to- view behind the from- view
-    toView.frame = containerView.frame;
+    CGRect frame = [transitionContext initialFrameForViewController:fromVC];
+    toView.frame = frame;
     CATransform3D scale = CATransform3DIdentity;
     toView.layer.transform = CATransform3DScale(scale, 0.6, 0.6, 1);
     toView.alpha = 0.6;
     
     [containerView insertSubview:toView belowSubview:fromView];
     
-    CGRect frameOffScreen = containerView.frame;
-    frameOffScreen.origin.y = containerView.frame.size.height;
+    CGRect frameOffScreen = frame;
+    frameOffScreen.origin.y = frame.size.height;
     
     CATransform3D t1 = [self firstTransform];
     

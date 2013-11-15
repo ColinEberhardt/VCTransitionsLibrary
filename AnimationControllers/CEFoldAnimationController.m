@@ -22,7 +22,8 @@
     // Add the toView to the container
     UIView* containerView = [transitionContext containerView];
 
-    toView.center = CGPointMake(1000, 0);
+    // move offscreen
+    toView.frame = CGRectOffset(toView.frame, toView.frame.size.width, 0);
     [containerView addSubview:toView];
     
     // Add a perspective transform
@@ -68,7 +69,7 @@
     }
     
     // move the from- view off screen
-    fromView.center = CGPointMake(1000, 0);
+    fromView.frame = CGRectOffset(fromView.frame, fromView.frame.size.width, 0);
 
     // create the animation
     NSTimeInterval duration = [self transitionDuration:transitionContext];
