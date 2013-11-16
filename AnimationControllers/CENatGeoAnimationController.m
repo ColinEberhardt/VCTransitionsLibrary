@@ -53,6 +53,9 @@ static const CGFloat kAnimationFirstPartRatio = 0.8f;
             }];
             
         } completion:^(BOOL finished) {
+            fromViewController.view.layer.transform = CATransform3DIdentity;
+            toViewController.view.layer.transform = CATransform3DIdentity;
+            transitionContext.containerView.layer.transform = CATransform3DIdentity;
             [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
         }];
         
@@ -88,8 +91,11 @@ static const CGFloat kAnimationFirstPartRatio = 0.8f;
                                           animations:^{
                 sourceLastTransform(fromLayer);
             }];
-            
+
         } completion:^(BOOL finished) {
+            fromViewController.view.layer.transform = CATransform3DIdentity;
+            toViewController.view.layer.transform = CATransform3DIdentity;
+            transitionContext.containerView.layer.transform = CATransform3DIdentity;
             [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
         }];
     }
