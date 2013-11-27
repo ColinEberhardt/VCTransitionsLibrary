@@ -42,6 +42,8 @@
     switch (gestureRecognizer.state) {
         case UIGestureRecognizerStateBegan: {
             
+            if (translation.x == 0) break;//if no horizontal translation returned, simply break and do nothing
+            
             BOOL rightToLeftSwipe = translation.x < 0;
             
             // perform the required navigation operation ...
