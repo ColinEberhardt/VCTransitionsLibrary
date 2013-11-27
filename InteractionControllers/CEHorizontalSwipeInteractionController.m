@@ -42,7 +42,11 @@
     switch (gestureRecognizer.state) {
         case UIGestureRecognizerStateBegan: {
             
-            if (translation.x == 0) break;//if no horizontal translation returned, simply break and do nothing
+            // if the user performs a *very* slow swipe, the initiatlly returned x translation may be zero. This means
+            // that we cannot effectively determine which direction the swipe is, so we just
+            // ignore this interaction.
+            if (translation.x == 0)
+                break;
             
             BOOL rightToLeftSwipe = translation.x < 0;
             
