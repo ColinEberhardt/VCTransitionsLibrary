@@ -26,7 +26,7 @@
     
     UIView* containerView = [transitionContext containerView];
     
-    // !!!: if containerView has a transform (e.g. device is in landscape orientation) then frame cannot be used
+    // positions the to- view off the bottom of the sceen
     CGRect frame = [transitionContext initialFrameForViewController:fromVC];
     CGRect offScreenFrame = frame;
     offScreenFrame.origin.y = offScreenFrame.size.height;
@@ -52,7 +52,7 @@
         // this does not work with keyframes, so we siulate it by overshooting the final location in
         // the first keyframe
         [UIView addKeyframeWithRelativeStartTime:0.6f relativeDuration:0.2f animations:^{
-            toView.frame = CGRectMake(toView.frame.origin.x, toView.frame.origin.y-30.0, toView.frame.size.width, toView.frame.size.height);
+            toView.frame = CGRectOffset(toView.frame, 0.0, -30.0);
         }];
         [UIView addKeyframeWithRelativeStartTime:0.8f relativeDuration:0.2f animations:^{
             toView.frame = frame;
