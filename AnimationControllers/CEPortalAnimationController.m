@@ -69,8 +69,11 @@
                          
                          // remove all the temporary views
                          if ([transitionContext transitionWasCancelled]) {
+                             [containerView addSubview:fromView];
                              [self removeOtherViews:fromView];
                          } else {
+                             // add the real to- view and remove the snapshots
+                             [containerView addSubview:toView];
                              [self removeOtherViews:toView];
                          }
                          
@@ -88,6 +91,10 @@
 
     // Add the from-view to the container
     [containerView addSubview:fromView];
+    
+    // add the to- view and send offscreen (we need to do this in order to allow snapshotting)
+    toView.frame = CGRectOffset(toView.frame, toView.frame.size.width, 0);
+    [containerView addSubview:toView];
     
     
     // Create two-part snapshots of the to- view
@@ -132,6 +139,7 @@
                              [self removeOtherViews:fromView];
                          } else {
                              [self removeOtherViews:toView];
+                             toView.frame = containerView.bounds;
                          }
                          
                          // inform the context of completion
