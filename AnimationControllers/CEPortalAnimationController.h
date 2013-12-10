@@ -12,5 +12,5 @@
  Animates between the two view controllers using a portal-opening transition.
  */
 
-@interface ZENPortalAnimationController : CEReversibleAnimationController
+@interface CEPortalAnimationController : CEReversibleAnimationController
 @end

@@ -26,7 +26,7 @@
 		7273236A17DFBF140072C7FD /* CEHorizontalSwipeInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7273236817DFBF140072C7FD /* CEHorizontalSwipeInteractionController.m */; };
 		7273236D17DFC0690072C7FD /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7273236C17DFC0690072C7FD /* NavigationController.m */; };
 		7273237017DFC4710072C7FD /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7273236F17DFC4710072C7FD /* SettingsViewController.m */; };
-		72B92C661856FE98001A2D84 /* ZENPortalAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B92C651856FE98001A2D84 /* ZENPortalAnimationController.m */; };
+		72B92C661856FE98001A2D84 /* CEPortalAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B92C651856FE98001A2D84 /* CEPortalAnimationController.m */; };
 		72C15E1117E10C620056B3F9 /* CECrossfadeAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C15E1017E10C620056B3F9 /* CECrossfadeAnimationController.m */; };
 		72C15E1417E10E7B0056B3F9 /* CEExplodeAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C15E1317E10E7B0056B3F9 /* CEExplodeAnimationController.m */; };
 		72C15E1717E19A940056B3F9 /* CEFoldAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C15E1617E19A940056B3F9 /* CEFoldAnimationController.m */; };
@@ -77,8 +77,8 @@
 		7273236C17DFC0690072C7FD /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
 		7273236E17DFC4710072C7FD /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		7273236F17DFC4710072C7FD /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
-		72B92C641856FE98001A2D84 /* ZENPortalAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZENPortalAnimationController.h; sourceTree = "<group>"; };
-		72B92C651856FE98001A2D84 /* ZENPortalAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZENPortalAnimationController.m; sourceTree = "<group>"; };
+		72B92C641856FE98001A2D84 /* CEPortalAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEPortalAnimationController.h; sourceTree = "<group>"; };
+		72B92C651856FE98001A2D84 /* CEPortalAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEPortalAnimationController.m; sourceTree = "<group>"; };
 		72C15E0F17E10C620056B3F9 /* CECrossfadeAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CECrossfadeAnimationController.h; sourceTree = "<group>"; };
 		72C15E1017E10C620056B3F9 /* CECrossfadeAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CECrossfadeAnimationController.m; sourceTree = "<group>"; };
 		72C15E1217E10E7B0056B3F9 /* CEExplodeAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEExplodeAnimationController.h; sourceTree = "<group>"; };
@@ -182,8 +182,8 @@
 		7273235717DFBEBF0072C7FD /* AnimationControllers */ = {
 			isa = PBXGroup;
 			children = (
-				72B92C641856FE98001A2D84 /* ZENPortalAnimationController.h */,
-				72B92C651856FE98001A2D84 /* ZENPortalAnimationController.m */,
+				72B92C641856FE98001A2D84 /* CEPortalAnimationController.h */,
+				72B92C651856FE98001A2D84 /* CEPortalAnimationController.m */,
 				7273236117DFBEFE0072C7FD /* CEReversibleAnimationController.h */,
 				7273236217DFBEFE0072C7FD /* CEReversibleAnimationController.m */,
 				7273235A17DFBEBF0072C7FD /* CEFlipAnimationController.h */,
@@ -319,7 +319,7 @@
 			files = (
 				7273236917DFBF140072C7FD /* CEBaseInteractionController.m in Sources */,
 				7273233917DFBD4D0072C7FD /* ViewController.m in Sources */,
-				72B92C661856FE98001A2D84 /* ZENPortalAnimationController.m in Sources */,
+				72B92C661856FE98001A2D84 /* CEPortalAnimationController.m in Sources */,
 				72C15E1717E19A940056B3F9 /* CEFoldAnimationController.m in Sources */,
 				72C15E1417E10E7B0056B3F9 /* CEExplodeAnimationController.m in Sources */,
 				72C15E1117E10C620056B3F9 /* CECrossfadeAnimationController.m in Sources */,

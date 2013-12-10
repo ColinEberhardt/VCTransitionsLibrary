@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Frédéric ADDA. All rights reserved.
 //
 
-#import "ZENPortalAnimationController.h"
+#import "CEPortalAnimationController.h"
 
-@implementation ZENPortalAnimationController
+@implementation CEPortalAnimationController
 
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext fromVC:(UIViewController *)fromVC toVC:(UIViewController *)toVC fromView:(UIView *)fromView toView:(UIView *)toView {
     

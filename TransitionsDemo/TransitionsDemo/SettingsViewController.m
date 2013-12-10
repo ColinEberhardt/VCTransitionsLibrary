@@ -23,7 +23,7 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
-        _animationControllers = @[@"None", @"Cards", @"Fold", @"Explode", @"Flip", @"Turn", @"Crossfade", @"NatGeo"];
+        _animationControllers = @[@"None", @"Portal", @"Cards", @"Fold", @"Explode", @"Flip", @"Turn", @"Crossfade", @"NatGeo"];
         _interactionControllers = @[@"None", @"HorizontalSwipe", @"VerticalSwipe", @"Pinch"];
     }
     return self;
