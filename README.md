@@ -21,11 +21,13 @@ The library currently contains the following animations, which can be made inter
 <th>Turn</th>
 <th>Cards</th>
 <th>NatGeo</th>
+<th>Portal</th>
 </tr>
 <tr>
 <td><img src="Screenshots/thumbnails/Turn/1a.png"/></td>
 <td><img src="Screenshots/thumbnails/Cards/2.png"/></td>
 <td><img src="Screenshots/thumbnails/NatGeo/2.png"/></td>
+<td><img src="Screenshots/thumbnails/Portal/3.png"/></td>
 </tr>
 </table>
 
@@ -330,4 +332,15 @@ Gives the impression of one view controller pushing the other to the back. It lo
 ![](Screenshots/thumbnails/Cards/2.png)
 ![](Screenshots/thumbnails/Cards/3.png)
 ![](Screenshots/thumbnails/Cards/4.png)
+
+### Portal animation - CEPortalAnimationController
+
+The top-most view controller parts in the middle to reveal the view controller beneath.
+
+(courtesy of [FreddyF](https://github.com/FredddyF))
+
+![](Screenshots/thumbnails/Portal/4.png)
+![](Screenshots/thumbnails/Portal/3.png)
+![](Screenshots/thumbnails/Portal/2.png)
+![](Screenshots/thumbnails/Portal/1.png)
 
