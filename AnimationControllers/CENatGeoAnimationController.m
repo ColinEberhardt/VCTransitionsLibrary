@@ -53,6 +53,15 @@ static const CGFloat kAnimationFirstPartRatio = 0.8f;
             }];
             
         } completion:^(BOOL finished) {
+			// Bring the from view back to the front and re-disable the user
+			// interaction of the to view since the dismissal has been cancelled
+			if ([transitionContext transitionWasCancelled])
+			{
+				[transitionContext.containerView bringSubviewToFront:
+				 fromViewController.view];
+				toViewController.view.userInteractionEnabled = NO;
+			}
+			
             fromViewController.view.layer.transform = CATransform3DIdentity;
             toViewController.view.layer.transform = CATransform3DIdentity;
             transitionContext.containerView.layer.transform = CATransform3DIdentity;
@@ -93,6 +102,15 @@ static const CGFloat kAnimationFirstPartRatio = 0.8f;
             }];
 
         } completion:^(BOOL finished) {
+			// Bring the from view back to the front and re-enable its user
+			// interaction since the presentation has been cancelled
+			if ([transitionContext transitionWasCancelled])
+			{
+				[transitionContext.containerView bringSubviewToFront:
+				 fromViewController.view];
+				fromViewController.view.userInteractionEnabled = YES;
+			}
+			
             fromViewController.view.layer.transform = CATransform3DIdentity;
             toViewController.view.layer.transform = CATransform3DIdentity;
             transitionContext.containerView.layer.transform = CATransform3DIdentity;
