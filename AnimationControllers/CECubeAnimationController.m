@@ -39,6 +39,7 @@
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext fromVC:(UIViewController *)fromVC toVC:(UIViewController *)toVC fromView:(UIView *)fromView toView:(UIView *)toView
 {
 
+    //Calculate the direction
     int dir=0;
     switch (self.cubeAnimationType) {
         case CubeAnimationTypeNormal:
@@ -57,7 +58,8 @@
     CATransform3D viewToTransform;
 
     //We create a content view for do the translate animation
-    UIView *generalContentView = [[UIView alloc] initWithFrame:transitionContext.containerView.bounds];
+    UIView *generalContentView = [transitionContext containerView];
+                                  
     switch (self.cubeAnimationWay) {
         case CubeAnimationWayHorizontal:
             viewFromTransform = CATransform3DMakeRotation(dir*ROTATION_ANGLE, 0.0, 1.0, 0.0);
@@ -89,15 +91,11 @@
     //Create the shadow
     UIView *fromShadow = [fromView addOpacityWithColor:[UIColor blackColor]];
     UIView *toShadow = [toView addOpacityWithColor:[UIColor blackColor]];
-    
     [fromShadow setAlpha:0.0];
     [toShadow setAlpha:1.0];
     
+    //Add the to- view
     [generalContentView addSubview:toView];
-    [generalContentView addSubview:fromView];
-    
-    // Add the toView to the container
-    [[transitionContext containerView] addSubview:generalContentView];
     
     [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
         switch (self.cubeAnimationWay) {
@@ -119,9 +117,10 @@
         [fromShadow setAlpha:1.0];
         [toShadow setAlpha:0.0];
         
-        
     }completion:^(BOOL finished) {
         
+        //Set the final position of every elements transformed
+        [generalContentView setTransform:CGAffineTransformIdentity];
         fromView.layer.transform = CATransform3DIdentity;
         toView.layer.transform = CATransform3DIdentity;
         [fromView.layer setAnchorPoint:CGPointMake(0.5f, 0.5f)];
@@ -129,13 +128,6 @@
         
         [fromShadow removeFromSuperview];
         [toShadow removeFromSuperview];
-        
-        [generalContentView removeFromSuperview];
-        
-        //Relocated the views
-        [[transitionContext containerView] addSubview:fromView];
-        [[transitionContext containerView] addSubview:toView];
-        [generalContentView removeFromSuperview];
         
         if ([transitionContext transitionWasCancelled]) {
             [toView removeFromSuperview];
