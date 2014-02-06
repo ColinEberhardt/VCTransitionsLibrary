@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3CD5090B189FFE6900BAE35A /* CECubeAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD50909189FFE6900BAE35A /* CECubeAnimationController.m */; };
+		3CD50915189FFFB500BAE35A /* NSObject+ABExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD5090E189FFFB400BAE35A /* NSObject+ABExtras.m */; };
+		3CD50916189FFFB500BAE35A /* UIImageView+ABExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD50910189FFFB400BAE35A /* UIImageView+ABExtras.m */; };
+		3CD50917189FFFB500BAE35A /* UINavigationController+ABExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD50912189FFFB500BAE35A /* UINavigationController+ABExtras.m */; };
+		3CD50918189FFFB500BAE35A /* UIView+ABExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD50914189FFFB500BAE35A /* UIView+ABExtras.m */; };
 		7273232017DFBD4D0072C7FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7273231F17DFBD4D0072C7FD /* Foundation.framework */; };
 		7273232217DFBD4D0072C7FD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7273232117DFBD4D0072C7FD /* CoreGraphics.framework */; };
 		7273232417DFBD4D0072C7FD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7273232317DFBD4D0072C7FD /* UIKit.framework */; };
@@ -47,6 +52,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3CD50909189FFE6900BAE35A /* CECubeAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CECubeAnimationController.m; sourceTree = "<group>"; };
+		3CD5090A189FFE6900BAE35A /* CECubeAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CECubeAnimationController.h; sourceTree = "<group>"; };
+		3CD5090D189FFFB400BAE35A /* NSObject+ABExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ABExtras.h"; sourceTree = "<group>"; };
+		3CD5090E189FFFB400BAE35A /* NSObject+ABExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ABExtras.m"; sourceTree = "<group>"; };
+		3CD5090F189FFFB400BAE35A /* UIImageView+ABExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+ABExtras.h"; sourceTree = "<group>"; };
+		3CD50910189FFFB400BAE35A /* UIImageView+ABExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+ABExtras.m"; sourceTree = "<group>"; };
+		3CD50911189FFFB400BAE35A /* UINavigationController+ABExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+ABExtras.h"; sourceTree = "<group>"; };
+		3CD50912189FFFB500BAE35A /* UINavigationController+ABExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+ABExtras.m"; sourceTree = "<group>"; };
+		3CD50913189FFFB500BAE35A /* UIView+ABExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ABExtras.h"; sourceTree = "<group>"; };
+		3CD50914189FFFB500BAE35A /* UIView+ABExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ABExtras.m"; sourceTree = "<group>"; };
 		7273231C17DFBD4D0072C7FD /* TransitionsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransitionsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7273231F17DFBD4D0072C7FD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7273232117DFBD4D0072C7FD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -119,6 +134,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3CD5090C189FFFB400BAE35A /* CubeCategories */ = {
+			isa = PBXGroup;
+			children = (
+				3CD5090D189FFFB400BAE35A /* NSObject+ABExtras.h */,
+				3CD5090E189FFFB400BAE35A /* NSObject+ABExtras.m */,
+				3CD5090F189FFFB400BAE35A /* UIImageView+ABExtras.h */,
+				3CD50910189FFFB400BAE35A /* UIImageView+ABExtras.m */,
+				3CD50911189FFFB400BAE35A /* UINavigationController+ABExtras.h */,
+				3CD50912189FFFB500BAE35A /* UINavigationController+ABExtras.m */,
+				3CD50913189FFFB500BAE35A /* UIView+ABExtras.h */,
+				3CD50914189FFFB500BAE35A /* UIView+ABExtras.m */,
+			);
+			path = CubeCategories;
+			sourceTree = "<group>";
+		};
 		7273231317DFBD4D0072C7FD = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +212,9 @@
 		7273235717DFBEBF0072C7FD /* AnimationControllers */ = {
 			isa = PBXGroup;
 			children = (
+				3CD5090C189FFFB400BAE35A /* CubeCategories */,
+				3CD50909189FFE6900BAE35A /* CECubeAnimationController.m */,
+				3CD5090A189FFE6900BAE35A /* CECubeAnimationController.h */,
 				72B92C641856FE98001A2D84 /* CEPortalAnimationController.h */,
 				72B92C651856FE98001A2D84 /* CEPortalAnimationController.m */,
 				7273236117DFBEFE0072C7FD /* CEReversibleAnimationController.h */,
@@ -327,14 +360,19 @@
 				7273233017DFBD4D0072C7FD /* AppDelegate.m in Sources */,
 				7273232C17DFBD4D0072C7FD /* main.m in Sources */,
 				7273236017DFBEBF0072C7FD /* CETurnAnimationController.m in Sources */,
+				3CD50916189FFFB500BAE35A /* UIImageView+ABExtras.m in Sources */,
 				7273236A17DFBF140072C7FD /* CEHorizontalSwipeInteractionController.m in Sources */,
 				7D0D046C1816DBA700F289A6 /* CENatGeoAnimationController.m in Sources */,
 				7273236D17DFC0690072C7FD /* NavigationController.m in Sources */,
 				7273237017DFC4710072C7FD /* SettingsViewController.m in Sources */,
+				3CD5090B189FFE6900BAE35A /* CECubeAnimationController.m in Sources */,
+				3CD50915189FFFB500BAE35A /* NSObject+ABExtras.m in Sources */,
+				3CD50917189FFFB500BAE35A /* UINavigationController+ABExtras.m in Sources */,
 				72EE96DB17EF66040097DF82 /* CEVerticalSwipeInteractionController.m in Sources */,
 				7273235F17DFBEBF0072C7FD /* CEFlipAnimationController.m in Sources */,
 				7273236317DFBEFE0072C7FD /* CEReversibleAnimationController.m in Sources */,
 				72EE96D817EF47A60097DF82 /* CECardsAnimationController.m in Sources */,
+				3CD50918189FFFB500BAE35A /* UIView+ABExtras.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
