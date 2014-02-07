@@ -10,7 +10,7 @@
 #import "CEReversibleAnimationController.h"
 
 typedef enum {CubeAnimationWayHorizontal, CubeAnimationWayVertical} CubeAnimationWay;
-typedef enum {CubeAnimationTypeNormal, CubeAnimationTypeInverse} CubeAnimationType;
+typedef enum {CubeAnimationTypeInverse, CubeAnimationTypeNormal} CubeAnimationType;
 
 @interface CECubeAnimationController : CEReversibleAnimationController
 

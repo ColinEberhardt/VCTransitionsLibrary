@@ -8,14 +8,8 @@
 
 #import "CECubeAnimationController.h"
 
-#import "UIView+ABExtras.h"
-#import "UIImageView+ABExtras.h"
-#import "UINavigationController+ABExtras.h"
-
 #define PERSPECTIVE -1.0 / 200.0
 #define ROTATION_ANGLE M_PI_2
-
-#define TIME_ANIMATION 0.7
 
 @implementation CECubeAnimationController
 
@@ -24,36 +18,17 @@
     self = [super init];
     if (self) {
         self.cubeAnimationWay = CubeAnimationWayHorizontal;
-        self.cubeAnimationType = CubeAnimationTypeNormal;
-        
     }
-    
     return self;
-}
-
--(NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext
-{
-    return TIME_ANIMATION;
 }
 
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext fromVC:(UIViewController *)fromVC toVC:(UIViewController *)toVC fromView:(UIView *)fromView toView:(UIView *)toView
 {
 
     //Calculate the direction
-    int dir=0;
-    switch (self.cubeAnimationType) {
-        case CubeAnimationTypeNormal:
-            dir=self.reverse?-1:1;
-            break;
-        case CubeAnimationTypeInverse:
-            dir=self.reverse?1:-1;
-            break;
-            
-        default:
-            break;
-    }
-
-    //Crete the differents 3D animations
+    int dir = self.reverse ? 1 : -1;
+  
+    //Create the differents 3D animations
     CATransform3D viewFromTransform;
     CATransform3D viewToTransform;
 
@@ -89,8 +64,8 @@
     toView.layer.transform = viewToTransform;
     
     //Create the shadow
-    UIView *fromShadow = [fromView addOpacityWithColor:[UIColor blackColor]];
-    UIView *toShadow = [toView addOpacityWithColor:[UIColor blackColor]];
+    UIView *fromShadow = [self addOpacityToView:fromView withColor:[UIColor blackColor]];
+    UIView *toShadow = [self addOpacityToView:toView withColor:[UIColor blackColor]];
     [fromShadow setAlpha:0.0];
     [toShadow setAlpha:1.0];
     
@@ -117,7 +92,7 @@
         [fromShadow setAlpha:1.0];
         [toShadow setAlpha:0.0];
         
-    }completion:^(BOOL finished) {
+    } completion:^(BOOL finished) {
         
         //Set the final position of every elements transformed
         [generalContentView setTransform:CGAffineTransformIdentity];
@@ -139,6 +114,14 @@
         [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
         
     }];
+}
+
+- (UIView *)addOpacityToView:(UIView *) view withColor:(UIColor *)theColor
+{
+  UIView *shadowView = [[UIView alloc] initWithFrame:view.bounds];
+  [shadowView setBackgroundColor:[theColor colorWithAlphaComponent:0.8]];
+  [view addSubview:shadowView];
+  return shadowView;
 }
 
 @end
