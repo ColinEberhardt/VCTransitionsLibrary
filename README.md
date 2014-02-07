@@ -29,6 +29,18 @@ The library currently contains the following animations, which can be made inter
 <td><img src="Screenshots/thumbnails/NatGeo/2.png"/></td>
 <td><img src="Screenshots/thumbnails/Portal/3.png"/></td>
 </tr>
+<tr>
+<th>Cube</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr>
+<td><img src="Screenshots/thumbnails/Cube/2.png"/></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
 </table>
 
 ## Contents
@@ -343,4 +355,15 @@ The top-most view controller parts in the middle to reveal the view controller b
 ![](Screenshots/thumbnails/Portal/3.png)
 ![](Screenshots/thumbnails/Portal/2.png)
 ![](Screenshots/thumbnails/Portal/1.png)
+
+### Cube animation - CECubeAnimationController
+
+This transition gives the appearance of rotating the faces of a cube.
+
+(courtesy of [Andrés Brun](https://github.com/andresbrun))
+
+![](Screenshots/thumbnails/Cube/4.png)
+![](Screenshots/thumbnails/Cube/3.png)
+![](Screenshots/thumbnails/Cube/2.png)
+![](Screenshots/thumbnails/Cube/1.png)
 
