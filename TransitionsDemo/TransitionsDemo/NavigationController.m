@@ -24,12 +24,23 @@
     return self;
 }
 
-- (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC {
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
     
+    [self wirePopInteractionControllerTo:viewController];
+}
+
+- (void)wirePopInteractionControllerTo:(UIViewController *)viewController
+{
     // when a push occurs, wire the interaction controller to the to- view controller
-    if (AppDelegateAccessor.navigationControllerInteractionController) {
-        [AppDelegateAccessor.navigationControllerInteractionController wireToViewController:toVC forOperation:CEInteractionOperationPop];
+    if (!AppDelegateAccessor.navigationControllerInteractionController) {
+        return;
     }
+    
+    [AppDelegateAccessor.navigationControllerInteractionController wireToViewController:viewController forOperation:CEInteractionOperationPop];
+}
+
+
+- (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC {
     
     if (AppDelegateAccessor.navigationControllerAnimationController) {
         AppDelegateAccessor.navigationControllerAnimationController.reverse = operation == UINavigationControllerOperationPop;
