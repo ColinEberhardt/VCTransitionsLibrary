@@ -31,13 +31,13 @@ The library currently contains the following animations, which can be made inter
 </tr>
 <tr>
 <th>Cube</th>
-<th></th>
+<th>Pan</th>
 <th></th>
 <th></th>
 </tr>
 <tr>
 <td><img src="Screenshots/thumbnails/Cube/2.png"/></td>
-<td></td>
+<td><img src="Screenshots/thumbnails/Pan/pan_2.png"/></td>
 <td></td>
 <td></td>
 </tr>
