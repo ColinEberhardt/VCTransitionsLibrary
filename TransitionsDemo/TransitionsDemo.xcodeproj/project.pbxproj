@@ -17,9 +17,6 @@
 		7273233317DFBD4D0072C7FD /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7273233117DFBD4D0072C7FD /* Main_iPhone.storyboard */; };
 		7273233917DFBD4D0072C7FD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7273233817DFBD4D0072C7FD /* ViewController.m */; };
 		7273233B17DFBD4D0072C7FD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7273233A17DFBD4D0072C7FD /* Images.xcassets */; };
-		7273234217DFBD4D0072C7FD /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7273234117DFBD4D0072C7FD /* XCTest.framework */; };
-		7273234317DFBD4D0072C7FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7273231F17DFBD4D0072C7FD /* Foundation.framework */; };
-		7273234417DFBD4D0072C7FD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7273232317DFBD4D0072C7FD /* UIKit.framework */; };
 		7273235F17DFBEBF0072C7FD /* CEFlipAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7273235B17DFBEBF0072C7FD /* CEFlipAnimationController.m */; };
 		7273236017DFBEBF0072C7FD /* CETurnAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7273235D17DFBEBF0072C7FD /* CETurnAnimationController.m */; };
 		7273236317DFBEFE0072C7FD /* CEReversibleAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7273236217DFBEFE0072C7FD /* CEReversibleAnimationController.m */; };
@@ -36,16 +33,6 @@
 		72EE96DB17EF66040097DF82 /* CEVerticalSwipeInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72EE96DA17EF66040097DF82 /* CEVerticalSwipeInteractionController.m */; };
 		7D0D046C1816DBA700F289A6 /* CENatGeoAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D0D046B1816DBA700F289A6 /* CENatGeoAnimationController.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		7273234517DFBD4D0072C7FD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7273231417DFBD4D0072C7FD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7273231B17DFBD4D0072C7FD;
-			remoteInfo = TransitionsDemo;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3CD50909189FFE6900BAE35A /* CECubeAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CECubeAnimationController.m; sourceTree = "<group>"; };
@@ -64,7 +51,6 @@
 		7273233717DFBD4D0072C7FD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		7273233817DFBD4D0072C7FD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		7273233A17DFBD4D0072C7FD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		7273234017DFBD4D0072C7FD /* TransitionsDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransitionsDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7273234117DFBD4D0072C7FD /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		7273235A17DFBEBF0072C7FD /* CEFlipAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEFlipAnimationController.h; sourceTree = "<group>"; };
 		7273235B17DFBEBF0072C7FD /* CEFlipAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEFlipAnimationController.m; sourceTree = "<group>"; };
@@ -109,16 +95,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7273233D17DFBD4D0072C7FD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7273234217DFBD4D0072C7FD /* XCTest.framework in Frameworks */,
-				7273234417DFBD4D0072C7FD /* UIKit.framework in Frameworks */,
-				7273234317DFBD4D0072C7FD /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -137,7 +113,6 @@
 			isa = PBXGroup;
 			children = (
 				7273231C17DFBD4D0072C7FD /* TransitionsDemo.app */,
-				7273234017DFBD4D0072C7FD /* TransitionsDemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -246,24 +221,6 @@
 			productReference = 7273231C17DFBD4D0072C7FD /* TransitionsDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		7273233F17DFBD4D0072C7FD /* TransitionsDemoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7273235417DFBD4D0072C7FD /* Build configuration list for PBXNativeTarget "TransitionsDemoTests" */;
-			buildPhases = (
-				7273233C17DFBD4D0072C7FD /* Sources */,
-				7273233D17DFBD4D0072C7FD /* Frameworks */,
-				7273233E17DFBD4D0072C7FD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				7273234617DFBD4D0072C7FD /* PBXTargetDependency */,
-			);
-			name = TransitionsDemoTests;
-			productName = TransitionsDemoTests;
-			productReference = 7273234017DFBD4D0072C7FD /* TransitionsDemoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -272,11 +229,6 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Colin Eberhardt";
-				TargetAttributes = {
-					7273233F17DFBD4D0072C7FD = {
-						TestTargetID = 7273231B17DFBD4D0072C7FD;
-					};
-				};
 			};
 			buildConfigurationList = 7273231717DFBD4D0072C7FD /* Build configuration list for PBXProject "TransitionsDemo" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -292,7 +244,6 @@
 			projectRoot = "";
 			targets = (
 				7273231B17DFBD4D0072C7FD /* TransitionsDemo */,
-				7273233F17DFBD4D0072C7FD /* TransitionsDemoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -305,13 +256,6 @@
 				7273233B17DFBD4D0072C7FD /* Images.xcassets in Resources */,
 				7273233317DFBD4D0072C7FD /* Main_iPhone.storyboard in Resources */,
 				7273232A17DFBD4D0072C7FD /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7273233E17DFBD4D0072C7FD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,22 +288,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7273233C17DFBD4D0072C7FD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		7273234617DFBD4D0072C7FD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7273231B17DFBD4D0072C7FD /* TransitionsDemo */;
-			targetProxy = 7273234517DFBD4D0072C7FD /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7273232817DFBD4D0072C7FD /* InfoPlist.strings */ = {
@@ -477,46 +406,6 @@
 			};
 			name = Release;
 		};
-		7273235517DFBD4D0072C7FD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TransitionsDemo.app/TransitionsDemo";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TransitionsDemo/TransitionsDemo-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "TransitionsDemoTests/TransitionsDemoTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		7273235617DFBD4D0072C7FD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TransitionsDemo.app/TransitionsDemo";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TransitionsDemo/TransitionsDemo-Prefix.pch";
-				INFOPLIST_FILE = "TransitionsDemoTests/TransitionsDemoTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -534,15 +423,6 @@
 			buildConfigurations = (
 				7273235217DFBD4D0072C7FD /* Debug */,
 				7273235317DFBD4D0072C7FD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7273235417DFBD4D0072C7FD /* Build configuration list for PBXNativeTarget "TransitionsDemoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7273235517DFBD4D0072C7FD /* Debug */,
-				7273235617DFBD4D0072C7FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
