@@ -32,7 +32,6 @@
 		72EE96D817EF47A60097DF82 /* CECardsAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72EE96D717EF47A60097DF82 /* CECardsAnimationController.m */; };
 		72EE96DB17EF66040097DF82 /* CEVerticalSwipeInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72EE96DA17EF66040097DF82 /* CEVerticalSwipeInteractionController.m */; };
 		7D0D046C1816DBA700F289A6 /* CENatGeoAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D0D046B1816DBA700F289A6 /* CENatGeoAnimationController.m */; };
-		BC466838198B2AC900A07DF8 /* CEHorizontalSwipeRightInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC466837198B2AC900A07DF8 /* CEHorizontalSwipeRightInteractionController.m */; };
 		BC46683B198B2E6700A07DF8 /* CEPanAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC46683A198B2E6700A07DF8 /* CEPanAnimationController.m */; };
 /* End PBXBuildFile section */
 
@@ -84,8 +83,6 @@
 		72EE96DA17EF66040097DF82 /* CEVerticalSwipeInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEVerticalSwipeInteractionController.m; sourceTree = "<group>"; };
 		7D0D046A1816DBA700F289A6 /* CENatGeoAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CENatGeoAnimationController.h; sourceTree = "<group>"; };
 		7D0D046B1816DBA700F289A6 /* CENatGeoAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CENatGeoAnimationController.m; sourceTree = "<group>"; };
-		BC466836198B2AC900A07DF8 /* CEHorizontalSwipeRightInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEHorizontalSwipeRightInteractionController.h; sourceTree = "<group>"; };
-		BC466837198B2AC900A07DF8 /* CEHorizontalSwipeRightInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEHorizontalSwipeRightInteractionController.m; sourceTree = "<group>"; };
 		BC466839198B2E6700A07DF8 /* CEPanAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEPanAnimationController.h; sourceTree = "<group>"; };
 		BC46683A198B2E6700A07DF8 /* CEPanAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEPanAnimationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -196,8 +193,6 @@
 		7273236417DFBF140072C7FD /* InteractionControllers */ = {
 			isa = PBXGroup;
 			children = (
-				BC466836198B2AC900A07DF8 /* CEHorizontalSwipeRightInteractionController.h */,
-				BC466837198B2AC900A07DF8 /* CEHorizontalSwipeRightInteractionController.m */,
 				7273236517DFBF140072C7FD /* CEBaseInteractionController.h */,
 				7273236617DFBF140072C7FD /* CEBaseInteractionController.m */,
 				7273236717DFBF140072C7FD /* CEHorizontalSwipeInteractionController.h */,
@@ -284,7 +279,6 @@
 				72C15E1117E10C620056B3F9 /* CECrossfadeAnimationController.m in Sources */,
 				72EC05A917E7B1BE00DCB9A3 /* CEPinchInteractionController.m in Sources */,
 				7273233017DFBD4D0072C7FD /* AppDelegate.m in Sources */,
-				BC466838198B2AC900A07DF8 /* CEHorizontalSwipeRightInteractionController.m in Sources */,
 				7273232C17DFBD4D0072C7FD /* main.m in Sources */,
 				7273236017DFBEBF0072C7FD /* CETurnAnimationController.m in Sources */,
 				7273236A17DFBF140072C7FD /* CEHorizontalSwipeInteractionController.m in Sources */,

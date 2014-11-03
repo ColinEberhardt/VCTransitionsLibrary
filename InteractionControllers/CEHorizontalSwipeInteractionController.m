@@ -20,6 +20,7 @@
 }
 
 - (void)wireToViewController:(UIViewController *)viewController forOperation:(CEInteractionOperation)operation{
+    self.popOnRightToLeft = YES;
     _operation = operation;
     _viewController = viewController;
     [self prepareGestureRecognizerInView:viewController.view];
@@ -49,7 +50,8 @@
             
             if (_operation == CEInteractionOperationPop) {
                 // for pop operation, fire on right-to-left
-                if (rightToLeftSwipe) {
+                if ((self.popOnRightToLeft && rightToLeftSwipe) ||
+                    (!self.popOnRightToLeft && !rightToLeftSwipe)) {
                     self.interactionInProgress = YES;
                     [_viewController.navigationController popViewControllerAnimated:YES];
                 }
