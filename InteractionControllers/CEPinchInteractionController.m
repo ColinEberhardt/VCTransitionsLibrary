@@ -7,17 +7,15 @@
 //
 
 #import "CEPinchInteractionController.h"
+#import <objc/runtime.h>
+
+const NSString *kCEPinchGestureKey = @"kCEPinchGestureKey";
 
 @implementation CEPinchInteractionController{
     BOOL _shouldCompleteTransition;
     UIViewController *_viewController;
-    UIPinchGestureRecognizer *_gesture;
     CEInteractionOperation _operation;
     CGFloat _startScale;
-}
-
--(void)dealloc {
-    [_gesture.view removeGestureRecognizer:_gesture];
 }
 
 - (void)wireToViewController:(UIViewController *)viewController forOperation:(CEInteractionOperation)operation{
@@ -28,8 +26,18 @@
 
 
 - (void)prepareGestureRecognizerInView:(UIView*)view {
-    UIPinchGestureRecognizer *gesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
+    
+    UIPinchGestureRecognizer *gesture = objc_getAssociatedObject(view, (__bridge const void *)(kCEPinchGestureKey));
+    
+    if (gesture) {
+        [view removeGestureRecognizer:gesture];
+    }
+    
+    gesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
     [view addGestureRecognizer:gesture];
+    
+    objc_setAssociatedObject(view, (__bridge const void *)(kCEPinchGestureKey), gesture,OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+
 }
 
 - (CGFloat)completionSpeed

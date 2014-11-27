@@ -7,17 +7,16 @@
 //
 
 #import "CEHorizontalSwipeInteractionController.h"
+#import <objc/runtime.h>
+
+const NSString *kCEHorizontalSwipeGestureKey = @"kCEHorizontalSwipeGestureKey";
 
 @implementation CEHorizontalSwipeInteractionController {
     BOOL _shouldCompleteTransition;
     UIViewController *_viewController;
-    UIPanGestureRecognizer *_gesture;
     CEInteractionOperation _operation;
 }
 
--(void)dealloc {
-    [_gesture.view removeGestureRecognizer:_gesture];
-}
 
 - (void)wireToViewController:(UIViewController *)viewController forOperation:(CEInteractionOperation)operation{
     _operation = operation;
@@ -27,8 +26,19 @@
 
 
 - (void)prepareGestureRecognizerInView:(UIView*)view {
-    _gesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
-    [view addGestureRecognizer:_gesture];
+    
+    UIPanGestureRecognizer *gesture = objc_getAssociatedObject(view, (__bridge const void *)(kCEHorizontalSwipeGestureKey));
+    
+    if (gesture) {
+        [view removeGestureRecognizer:gesture];
+    }
+    
+    
+    gesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
+    [view addGestureRecognizer:gesture];
+    
+    objc_setAssociatedObject(view, (__bridge const void *)(kCEHorizontalSwipeGestureKey), gesture,OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+
 }
 
 - (CGFloat)completionSpeed
