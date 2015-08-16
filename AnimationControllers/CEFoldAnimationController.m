@@ -23,6 +23,7 @@
     UIView* containerView = [transitionContext containerView];
 
     // move offscreen
+    toView.frame = [transitionContext finalFrameForViewController:toVC];
     toView.frame = CGRectOffset(toView.frame, toView.frame.size.width, 0);
     [containerView addSubview:toView];
     

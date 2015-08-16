@@ -24,6 +24,7 @@
 
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext fromVC:(UIViewController *)fromVC toVC:(UIViewController *)toVC fromView:(UIView *)fromView toView:(UIView *)toView
 {
+    toView.frame = [transitionContext finalFrameForViewController:toVC];
 
     //Calculate the direction
     int dir = self.reverse ? 1 : -1;
