@@ -3,7 +3,7 @@
 With iOS 7 you can easily create custom view controller transitions that can be used in a range of contexts (push, pop, modal …). This project provides a library of custom animations which can be dropped directly into your project. It also has a number of 'interaction controllers' which can be used with any of the custom animations in order to make your transitions interactive.
 
 The library currently contains the following animations, which can be made interactive with either a swipe or pinch gesture.
- 
+
 <table>
 <tr>
 <th>Flip</th>
@@ -30,16 +30,10 @@ The library currently contains the following animations, which can be made inter
 <td><img src="Screenshots/thumbnails/Portal/3.png"/></td>
 </tr>
 <tr>
-<th>Cube</th>
-<th>Pan</th>
-<th></th>
-<th></th>
+<th colspan='4'>Cube</th>
 </tr>
 <tr>
-<td><img src="Screenshots/thumbnails/Cube/2.png"/></td>
-<td><img src="Screenshots/thumbnails/Pan/pan_2.png"/></td>
-<td></td>
-<td></td>
+<td colspan='4' align='center'><img src="Screenshots/thumbnails/Cube/2.png"/></td>
 </tr>
 </table>
 
@@ -67,9 +61,9 @@ There are two key classes involved in a custom transition:
 
  + **Animation controller** - this class is responsible for performing the custom transitions. When you indicate that a custom transitions should be used, you provide an animation controller. This class performs the required animation, then informs the framework when it has completed.
  + **Interaction controller** - this class is responsible for managing interactive transitions - these are transitions that typically controlled by a gesture, allowing the user to swipe, pinch or perform some other action to navigate between view controllers. Importantly, interaction controllers allow transitions to be cancelled, i.e. a user can start the navigation, change their mind, and reverse it!
- 
+
 **NOTE:** Animation and interaction controllers are entirely independent, this means you can wire up any interaction controller with any animation controller - which is pretty awesome.
- 
+
 ## <a id="intro"></a>Adding custom transitions to your project
 
 This sections gives a brief overview of the steps required to add custom view controller transitions to your project. You might also want to look at the code for the demo app (in the `TransitionsDemo` folder) for reference. If you already know how the iOS 7 custom view controller transitions work, feel free to skip this section!
@@ -80,7 +74,7 @@ There are a couple of ways you can incorporate transitions from this library int
 
  1. **Cocoapods** - simply add a reference to **VCTransitionsLibrary** to your pod file.
  2. **Manual file copy** - if you are not using Cocoapods, you can simply copy the required files into your project. The `AnimationControllers` and `InteractionControllers` folders contain all the code that is required.
- 
+
 ### <a id="animation"></a>Using an animation controller
 
 The `AnimationControllers` folder contains a number of animate controllers, which provide custom transitions, which can be integrated into your project as follows:
@@ -101,17 +95,17 @@ Notice that this message has an 'operation' argument that allows you to return d
    animationControllerForOperation:(UINavigationControllerOperation)operation
                 fromViewController:(UIViewController *)fromVC
                   toViewController:(UIViewController *)toVC {
-    
+
     // reverse the animation for 'pop' transitions
     _animationController.reverse = operation == UINavigationControllerOperationPop;
-    
+
     return _animationController;
 }
 ```
 
 #### <a id="animationTab"></a>Custom tab bar controller transitions
 
-The `UITabBarControllerDelegate` protocol has methods that can be used to provide animation controllers. Simply return an animation controller in response to the `tabBarController: animationControllerForTransitionFromViewController: toViewController:` 
+The `UITabBarControllerDelegate` protocol has methods that can be used to provide animation controllers. Simply return an animation controller in response to the `tabBarController: animationControllerForTransitionFromViewController: toViewController:`
 message.
 
 In order to determine the animation direction, you can compare the indices of the two view controller as shown below:
@@ -120,10 +114,10 @@ In order to determine the animation direction, you can compare the indices of th
 - (id <UIViewControllerAnimatedTransitioning>)tabBarController:(UITabBarController *)tabBarController
             animationControllerForTransitionFromViewController:(UIViewController *)fromVC
                                               toViewController:(UIViewController *)toVC {
-    
+
     NSUInteger fromVCIndex = [tabBarController.viewControllers indexOfObject:fromVC];
     NSUInteger toVCIndex = [tabBarController.viewControllers indexOfObject:toVC];
-    
+
     _animationController.reverse = fromVCIndex < toVCIndex;
     return _animationController;
 }
@@ -149,9 +143,9 @@ CESwipeInteractionController *_interactionController;
       animationControllerForPresentedController:(UIViewController *)presented
                            presentingController:(UIViewController *)presenting
                                sourceController:(UIViewController *)source {
-    
+
     // allow the interaction controller to wire-up its gesture recognisers
-    [_interactionController wireToViewController:presented 
+    [_interactionController wireToViewController:presented
                                     forOperation:CEInteractionOperationDismiss];
        _animationController.reverse = NO;
     return _animationController;
@@ -166,7 +160,7 @@ CESwipeInteractionController *_interactionController;
 - (id<UIViewControllerInteractiveTransitioning>)
            interactionControllerForDismissal:
                 (id<UIViewControllerAnimatedTransitioning>)animator {
-                
+
     // provide the interaction controller, if an interactive transition is in progress
     return _interactionController.interactionInProgress
                 ? _interactionController : nil;
@@ -189,20 +183,20 @@ CESwipeInteractionController *_interactionController;
       animationControllerForOperation:(UINavigationControllerOperation)operation
                    fromViewController:(UIViewController *)fromVC
                      toViewController:(UIViewController *)toVC {
-    
+
     // wire the interaction controller to the to- view controller
     [_interactionController wireToViewController:toVC
                                     forOperation:CEInteractionOperationPop];
-    
+
     _animationController.reverse = operation == UINavigationControllerOperationPop;
-    
+
     return _animationController.reverse;
 }
 
 - (id <UIViewControllerInteractiveTransitioning>)
-                         navigationController:(UINavigationController *)navigationController 
+                         navigationController:(UINavigationController *)navigationController
   interactionControllerForAnimationController:(id <UIViewControllerAnimatedTransitioning>)animationController {
-    
+
     // provide the interaction controller, if an interactive transition is in progress
     return _interactionController.interactionInProgress
                 ? _interactionController : nil;
@@ -222,12 +216,12 @@ The `UITabBarControllerDelegate` protocol has an equivalent method for returning
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
         self.delegate = self;
-        
+
         // create the interaction / animation controllers
         _swipeInteractionController = [CESwipeInteractionController new];
         _animationController = [CEFoldAnimationController new];
         _animationController.folds = 3;
-        
+
         // observe changes in the currently presented view controller
         [self addObserver:self
                forKeyPath:@"selectedViewController"
@@ -243,7 +237,7 @@ The `UITabBarControllerDelegate` protocol has an equivalent method for returning
 {
     if ([keyPath isEqualToString:@"selectedViewController"] )
     {
-    	// wire the interaction controller to the view controller
+      // wire the interaction controller to the view controller
         [_swipeInteractionController wireToViewController:self.selectedViewController
                                              forOperation:CEInteractionOperationTab];
     }
@@ -254,10 +248,10 @@ The `UITabBarControllerDelegate` protocol has an equivalent method for returning
 - (id <UIViewControllerAnimatedTransitioning>)tabBarController:(UITabBarController *)tabBarController
             animationControllerForTransitionFromViewController:(UIViewController *)fromVC
                                               toViewController:(UIViewController *)toVC {
-    
+
     NSUInteger fromVCIndex = [tabBarController.viewControllers indexOfObject:fromVC];
     NSUInteger toVCIndex = [tabBarController.viewControllers indexOfObject:toVC];
-    
+
     _animationController.reverse = fromVCIndex < toVCIndex;
     return _animationController;
 }
@@ -285,7 +279,7 @@ Animates between the two view controllers using a paper-fold style transition. Y
 
 ### Flip animation - CEFlipAnimationController
 
-Animates between the two view controllers using a page-flip transition. 
+Animates between the two view controllers using a page-flip transition.
 
 ![](Screenshots/thumbnails/Flip/1.png)
 ![](Screenshots/thumbnails/Flip/2.png)
@@ -318,7 +312,7 @@ Animates between the two view controllers by performing a 3D flip, to reveal the
 
 ### Crossfade animation - CECrossfadeAnimationController
 
-Animates between the two view controllers by performing a simple cross-fade. 
+Animates between the two view controllers by performing a simple cross-fade.
 
 ![](Screenshots/thumbnails/Crossfade/1.png)
 ![](Screenshots/thumbnails/Crossfade/2.png)
@@ -366,4 +360,3 @@ This transition gives the appearance of rotating the faces of a cube.
 ![](Screenshots/thumbnails/Cube/3.png)
 ![](Screenshots/thumbnails/Cube/2.png)
 ![](Screenshots/thumbnails/Cube/1.png)
-
