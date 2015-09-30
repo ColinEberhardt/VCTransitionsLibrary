@@ -30,16 +30,10 @@ The library currently contains the following animations, which can be made inter
 <td><img src="Screenshots/thumbnails/Portal/3.png"/></td>
 </tr>
 <tr>
-<th>Cube</th>
-<th></th>
-<th></th>
-<th></th>
+<th colspan='4'>Cube</th>
 </tr>
 <tr>
-<td><img src="Screenshots/thumbnails/Cube/2.png"/></td>
-<td></td>
-<td></td>
-<td></td>
+<td colspan='4' align='center'><img src="Screenshots/thumbnails/Cube/2.png"/></td>
 </tr>
 </table>
 
