@@ -79,7 +79,7 @@
         case UIGestureRecognizerStateChanged: {
             if (self.interactionInProgress) {
                 // compute the current position
-                CGFloat fraction = fabsf(translation.x / 200.0);
+                CGFloat fraction = fabs(translation.x / 200.0);
                 fraction = fminf(fmaxf(fraction, 0.0), 1.0);
                 _shouldCompleteTransition = (fraction > 0.5);
                 
