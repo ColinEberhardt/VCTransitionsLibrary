@@ -78,8 +78,8 @@ This sections gives a brief overview of the steps required to add custom view co
 
 There are a couple of ways you can incorporate transitions from this library into your code:
 
- 1. **Cocoapods** - simply add a reference to **VCTransitionsLibrary** to your pod file.
- 2. **Manual file copy** - if you are not using Cocoapods, you can simply copy the required files into your project. The `AnimationControllers` and `InteractionControllers` folders contain all the code that is required.
+ 1. **CocoaPods** - simply add a reference to **VCTransitionsLibrary** to your pod file.
+ 2. **Manual file copy** - if you are not using CocoaPods, you can simply copy the required files into your project. The `AnimationControllers` and `InteractionControllers` folders contain all the code that is required.
  
 ### <a id="animation"></a>Using an animation controller
 
