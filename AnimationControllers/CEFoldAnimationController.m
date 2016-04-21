@@ -113,10 +113,18 @@
         for (UIView *view in fromViewFolds) {
             [view removeFromSuperview];
         }
-        // restore the to- and from- to the initial location
-        toView.frame = containerView.bounds;
-        fromView.frame = containerView.bounds;
-        [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+      
+        BOOL transitionFinished = ![transitionContext transitionWasCancelled];
+        if (transitionFinished) {
+          // restore the to- and from- to the initial location
+          toView.frame = containerView.bounds;
+          fromView.frame = containerView.bounds;
+        }
+        else {
+          // restore the from- to the initial location if cancelled
+          fromView.frame = containerView.bounds;
+        }
+        [transitionContext completeTransition:transitionFinished];
     }];
 
     
