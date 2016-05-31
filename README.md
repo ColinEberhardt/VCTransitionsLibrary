@@ -66,7 +66,11 @@ The following provides a very brief introduction to the concepts, for more detai
 There are two key classes involved in a custom transition:
 
  + **Animation controller** - this class is responsible for performing the custom transitions. When you indicate that a custom transitions should be used, you provide an animation controller. This class performs the required animation, then informs the framework when it has completed.
+![](Screenshots/ConceptMaps/CustomVCTransitions1.png)
+![](Screenshots/ConceptMaps/CustomVCTransitions2.png)
+
  + **Interaction controller** - this class is responsible for managing interactive transitions - these are transitions that typically controlled by a gesture, allowing the user to swipe, pinch or perform some other action to navigate between view controllers. Importantly, interaction controllers allow transitions to be cancelled, i.e. a user can start the navigation, change their mind, and reverse it!
+![](Screenshots/ConceptMaps/InteractiveVCTransitions.png)
  
 **NOTE:** Animation and interaction controllers are entirely independent, this means you can wire up any interaction controller with any animation controller - which is pretty awesome.
  
