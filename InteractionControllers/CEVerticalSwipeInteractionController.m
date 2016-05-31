@@ -7,17 +7,16 @@
 //
 
 #import "CEVerticalSwipeInteractionController.h"
+#import <objc/runtime.h>
+
+const NSString *kCEVerticalSwipeGestureKey = @"kCEVerticalSwipeGestureKey";
 
 @implementation CEVerticalSwipeInteractionController {
     BOOL _shouldCompleteTransition;
     UIViewController *_viewController;
-    UIPanGestureRecognizer *_gesture;
     CEInteractionOperation _operation;
 }
 
--(void)dealloc {
-    [_gesture.view removeGestureRecognizer:_gesture];
-}
 
 - (void)wireToViewController:(UIViewController *)viewController forOperation:(CEInteractionOperation)operation{
     
@@ -33,8 +32,17 @@
 
 
 - (void)prepareGestureRecognizerInView:(UIView*)view {
-    _gesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
-    [view addGestureRecognizer:_gesture];
+    UIPanGestureRecognizer *gesture = objc_getAssociatedObject(view, (__bridge const void *)(kCEVerticalSwipeGestureKey));
+    
+    if (gesture) {
+        [view removeGestureRecognizer:gesture];
+    }
+ 
+    gesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
+    [view addGestureRecognizer:gesture];
+    
+    objc_setAssociatedObject(view, (__bridge const void *)(kCEVerticalSwipeGestureKey), gesture,OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+
 }
 
 - (CGFloat)completionSpeed
