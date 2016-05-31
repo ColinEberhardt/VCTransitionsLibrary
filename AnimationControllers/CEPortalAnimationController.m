@@ -93,6 +93,7 @@
     [containerView addSubview:fromView];
     
     // add the to- view and send offscreen (we need to do this in order to allow snapshotting)
+    toView.frame = [transitionContext finalFrameForViewController:toVC];
     toView.frame = CGRectOffset(toView.frame, toView.frame.size.width, 0);
     [containerView addSubview:toView];
     

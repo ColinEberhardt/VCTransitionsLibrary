@@ -32,6 +32,7 @@
 		72EE96D817EF47A60097DF82 /* CECardsAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72EE96D717EF47A60097DF82 /* CECardsAnimationController.m */; };
 		72EE96DB17EF66040097DF82 /* CEVerticalSwipeInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72EE96DA17EF66040097DF82 /* CEVerticalSwipeInteractionController.m */; };
 		7D0D046C1816DBA700F289A6 /* CENatGeoAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D0D046B1816DBA700F289A6 /* CENatGeoAnimationController.m */; };
+		A993F2801B80832400553FBD /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A993F27E1B80832400553FBD /* Launch Screen.storyboard */; };
 		BC46683B198B2E6700A07DF8 /* CEPanAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC46683A198B2E6700A07DF8 /* CEPanAnimationController.m */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,7 @@
 		72EE96DA17EF66040097DF82 /* CEVerticalSwipeInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEVerticalSwipeInteractionController.m; sourceTree = "<group>"; };
 		7D0D046A1816DBA700F289A6 /* CENatGeoAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CENatGeoAnimationController.h; sourceTree = "<group>"; };
 		7D0D046B1816DBA700F289A6 /* CENatGeoAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CENatGeoAnimationController.m; sourceTree = "<group>"; };
+		A993F27F1B80832400553FBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Launch Screen.storyboard"; sourceTree = "<group>"; };
 		BC466839198B2E6700A07DF8 /* CEPanAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEPanAnimationController.h; sourceTree = "<group>"; };
 		BC46683A198B2E6700A07DF8 /* CEPanAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEPanAnimationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,6 +138,7 @@
 			children = (
 				7273232E17DFBD4D0072C7FD /* AppDelegate.h */,
 				7273232F17DFBD4D0072C7FD /* AppDelegate.m */,
+				A993F27E1B80832400553FBD /* Launch Screen.storyboard */,
 				7273233117DFBD4D0072C7FD /* Main_iPhone.storyboard */,
 				7273233717DFBD4D0072C7FD /* ViewController.h */,
 				7273233817DFBD4D0072C7FD /* ViewController.m */,
@@ -260,6 +263,7 @@
 			files = (
 				7273233B17DFBD4D0072C7FD /* Images.xcassets in Resources */,
 				7273233317DFBD4D0072C7FD /* Main_iPhone.storyboard in Resources */,
+				A993F2801B80832400553FBD /* Launch Screen.storyboard in Resources */,
 				7273232A17DFBD4D0072C7FD /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,6 +315,14 @@
 				7273233217DFBD4D0072C7FD /* Base */,
 			);
 			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		A993F27E1B80832400553FBD /* Launch Screen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A993F27F1B80832400553FBD /* Base */,
+			);
+			name = "Launch Screen.storyboard";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

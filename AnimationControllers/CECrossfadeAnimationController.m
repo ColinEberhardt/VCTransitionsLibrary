@@ -14,6 +14,7 @@
     
     // Add the toView to the container
     UIView* containerView = [transitionContext containerView];
+    toView.frame = [transitionContext finalFrameForViewController:toVC];
     [containerView addSubview:toView];
     [containerView sendSubviewToBack:toView];
     
